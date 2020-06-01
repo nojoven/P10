@@ -1,0 +1,24 @@
+# .coveragerc to control coverage.py
+
+[run]
+omit =
+        *__init__*
+        */usr/local/lib*
+        *Test*
+        */.virtualenv/*
+
+[report]
+omit =
+        *__init__*
+        */usr/local/lib*
+        *Test*
+        */.virtualenvs/*
+        *apps*
+        *manage*
+        *wsgi*
+        *selenium*
+        *asgi*
+show_missing = True
+
+
+
