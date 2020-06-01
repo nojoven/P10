@@ -11,10 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
-
-# import psycopg2.extensions
+import psycopg2.extensions
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,7 +29,7 @@ else:
     DEBUG = True
     print("DEBUG = TRUE")
 
-ALLOWED_HOSTS = ['beurrepur.herokuapp.com']
+ALLOWED_HOSTS = ['209.97.178.91']
 
 # Application definition
 
@@ -55,7 +52,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "PurBeurre.urls"
@@ -85,10 +81,10 @@ WSGI_APPLICATION = "PurBeurre.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "OPTIONS": {},
         "NAME": "purbeurre",
-        "USER": "postgres",
+        "USER": "root",
         "PASSWORD": "Hamzamal89",
         "HOST": "127.0.0.1",
         "PORT": "5432",
@@ -134,10 +130,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
 STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())

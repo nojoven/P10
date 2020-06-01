@@ -23,4 +23,5 @@ dj-database-url = "*"
 whitenoise = "*"
 pip = "*"
 pytest-cov = "*"
-
+psycopg2 = "*"
+supervisor = "*"
