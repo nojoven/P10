@@ -5,8 +5,7 @@ before_install:
 language: python python:
   - "3.6"
 
-before_script:
-  - cd ./PurBeurre 
+before_script: 
   - pip3 install -r requirements.txt
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
