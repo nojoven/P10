@@ -1,8 +1,8 @@
 ---
 before_install:
   - chmod +x ./PurBeurre/manage.py
-
-language: python python:
+  - cd ./Purbeurre 
+language: python:
   - "3.6"
 
 before_script: 
