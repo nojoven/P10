@@ -6,7 +6,7 @@ language: python
 python: 
   - "3.6"
 
-before_script:
+install:
   - pip3 install -r ./PurBeurre/requirements.txt
 
 env: DJANGO_SETTINGS_MODULE="purbeurre.settings"
