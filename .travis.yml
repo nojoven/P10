@@ -1,6 +1,6 @@
 ---
 before_install:
-  - chmod +x /PurBeurre/manage.py 
+  - chmod +x ./PurBeurre/manage.py 
 
 language: python 
 python: 
