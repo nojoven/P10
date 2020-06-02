@@ -1,31 +1,26 @@
 ---
-[
-  {
-    "os": "linux",
-    "language": {
-      "python": [
-        "3.6"
-      ]
-    },
-    "dist": "xenial",
-    "before_script": [
-      "pip3 install -r requirements.txt"
-    ],
-    "services": [
-      "postgresql"
-    ],
-    "script": [
-      "./manage.py test"
-    ],
-    "branches": {
-      "only": [
-        "staging"
-      ]
-    },
-    "env": [
-      {
-        "DJANGO_SETTINGS_MODULE": "\"purbeurre.settings\""
-      }
-    ]
-  }
-]
+os:
+  linux
+
+dist:
+  xenial
+
+language: python 
+python: 
+  - "3.6"
+
+before_script:
+  - pip3 install -r requirements.txt
+
+env: DJANGO_SETTINGS_MODULE="purbeurre.settings"
+
+services:
+  - postgresql
+
+script:
+  - ./manage.py test
+
+# safelist
+branches:
+  only:
+    - staging
