@@ -1,7 +1,8 @@
 ---
 before_install:
-  - chmod +x ./PurBeurre/manage.py
   - cd ./PurBeurre
+  - chmod +x manage.py
+
 language: python
 python:
   - "3.6"
@@ -15,7 +16,7 @@ services:
   - postgresql
 
 script:
-  - manage.py test
+  - python manage.py test
 
 # safelist
 branches:
