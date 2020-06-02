@@ -9,7 +9,7 @@ python:
 before_script:
   - pip3 install -r ./PurBeurre/requirements.txt
 
-env: DJANGO_SETTINGS_MODULE="./PurBeurre.settings"
+env: DJANGO_SETTINGS_MODULE="PurBeurre.PurBeurre.settings"
 
 services:
   - postgresql
