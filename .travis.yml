@@ -1,6 +1,7 @@
 ---
 before_install:
   - cd ./PurBeurre
+  - export PYTHONPATH="$(pwd)"
   - chmod +x manage.py
 
 language: python
