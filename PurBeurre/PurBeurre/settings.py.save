@@ -22,10 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "3u2!k9u@no&)*3iem^bkft^5bfa)od*l&$m(kl0lnmaedzz=(q"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+    print("DEBUG = FALSE")
+else:
+    DEBUG = True
+    print("DEBUG = TRUE")
 
-
-ALLOWED_HOSTS = ['209.97.178.91']
+ALLOWED_HOSTS = ['beurrepur.herokuapp.com']
 
 # Application definition
 
@@ -48,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "PurBeurre.urls"
@@ -77,10 +82,10 @@ WSGI_APPLICATION = "PurBeurre.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.",
         "OPTIONS": {},
         "NAME": "purbeurre",
-        "USER": "root",
+        "USER": "postgres",
         "PASSWORD": "Hamzamal89",
         "HOST": "127.0.0.1",
         "PORT": "5432",
@@ -125,6 +130,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
