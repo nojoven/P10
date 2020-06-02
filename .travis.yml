@@ -2,6 +2,7 @@
 before_install:
   - cd ./PurBeurre
   - export PYTHONPATH="$(pwd)"
+  - export PATH=$PATH:chromedriver.exe
   - chmod +x manage.py
 
 language: python
