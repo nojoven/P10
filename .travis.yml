@@ -1,13 +1,13 @@
 ---
 before_install:
-  - chmod +x ./PurBeurre/manage.py 
+  - chmod +x ./PurBeurre/manage.py
+  - cd PurBeurre 
 
-language: python 
-python: 
+language: python python:
   - "3.6"
 
 before_script:
-  - pip3 install -r ./PurBeurre/requirements.txt
+  - pip3 install -r requirements.txt
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
 
@@ -15,7 +15,7 @@ services:
   - postgresql
 
 script:
-  - ./PurBeurre/manage.py test
+  - manage.py test
 
 # safelist
 branches:
