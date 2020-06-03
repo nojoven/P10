@@ -4,7 +4,7 @@ It will use Selenium.
 """
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-
+from webdriver_manager.chrome import ChromeDriverManager
 
 class MySeleniumTests(StaticLiveServerTestCase):
     """
@@ -13,7 +13,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     """
     options = webdriver.ChromeOptions()
     options.add_argument("--disable-extensions")
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.implicitly_wait(24000)
 
     def test_browser(self):
