@@ -10,6 +10,7 @@ python:
 
 before_script:
   - pip3 install -r requirements.txt
+  - chromedriver-update 84.0.4147.30
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
 
