@@ -37,12 +37,13 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
-        self.driver.close()
+
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
         logging.info("Home title contains 'GRAS'")
         print("Home title contains 'GRAS'")
+        self.driver.close()
         # Then we go on the sigin page
         self.driver.get("http://localhost:8000/roles/signin/")
         logging.info("Asking signin page")
