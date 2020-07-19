@@ -8,6 +8,10 @@ language: python
 python:
   - "3.6"
 
+addons:
+  chrome: stable
+  firefox: latest
+
 before_script:
   - pip3 install -r requirements.txt
   - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
