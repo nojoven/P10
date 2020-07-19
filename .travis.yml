@@ -3,6 +3,7 @@ before_install:
   - cd ./PurBeurre
   - export PYTHONPATH="$(pwd)"
   - chmod +x manage.py
+  - google-chrome-stable --headless --disable-gpu
 
 language: python
 python:
@@ -11,9 +12,6 @@ python:
 addons:
   chrome: stable
   firefox: latest
-
-services:
-  - xvfb
 
 before_script:
   - pip3 install -r requirements.txt
