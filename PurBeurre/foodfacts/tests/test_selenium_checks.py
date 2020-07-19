@@ -28,6 +28,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         """
         logging.info("Starting selenium")
         print("Starting selenium")
+        self.driver.close()
         # First we go full screen
         self.driver.maximize_window()
         logging.info("Window maximized")
