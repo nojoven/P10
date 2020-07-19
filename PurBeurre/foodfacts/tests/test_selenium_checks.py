@@ -34,7 +34,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
                 "main_title").text)
 
         # Then we go on the sigin page
-        self.driver.get("http://localhost:8000/roles/signin/")
+        self.driver.get("http://209.97.178.91:8000/roles/signin/")
         self.assertIn(
             "CONNEXION", self.driver.find_element_by_tag_name(
                 "h1").text)
