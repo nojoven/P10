@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% load static %}
+        <!-- Masthead-->
+        {% include "mastheadfound.html" %}
+        <!-- About section-->
+        <section class="page-section" style="background-color:#E8A75D;" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 id="nutriscore_h3" class="h4 mb-2">Nutriscore: </h3>
+                            {% with image="foodfacts/assets/img/icons/NUTRI-SCORE/"|add:product.nutrigrade|add:".svg" %}
+
+                            <img style="border-radius: 20%; border: solid 4px #345A61" width="300px" height="170px" src="{% static image %}">
+                            {% endwith %}
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 text-center">
+                        <div class="mt-5">
+                            <h3 class="h4 mb-2 title-font">Repères nutritionnels pour 100g</h3>
+                            <h3 class="h4 mb-2 title-font">de {{product.productname}}</h3>
+                            <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Energie</th>
+                                  <th scope="col">{{product.energy_kcal_100g}} Kcal</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">Fibres</th>
+                                  <td>{{product.fiber_100g |floatformat:2}}g</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Sodium</th>
+                                  <td>{{product.sodium_100g |floatformat:2}}g</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Protéines</th>
+                                  <td>{{product.proteins_100g |floatformat:2}}g</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Matières grasses</th>
+                                  <td>{{product.fat_100g |floatformat:2}}g</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Matières grasses saturées</th>
+                                  <td>{{product.saturated_fat_100g |floatformat:2}}g</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Sucres</th>
+                                  <td>{{product.sugars_100g |floatformat:2}}g</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <hr class="divider light my-4" />
+                        <a href="{{ product.url }}" id="offacts_link" name="offacts_link"><h5 class="text-black mt-0 title-font"><strong style="color: #345A61;">Voir la fiche d'Open Food Facts</strong></h5></a>
+                    </div>
+                    <div class="col-lg-8 text-center">
+                        <hr class="divider light my-4" />
+                    </div>
+                </div>
+            </div>
+    </section>
+{% endblock %}

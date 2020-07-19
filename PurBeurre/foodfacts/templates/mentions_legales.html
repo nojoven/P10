@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% load static %}
+        <!-- Masthead-->
+        <header class="masthead-account" id="account">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-baseline">
+                        <h1 class="text-white font-weight-light title-font mb-5 up">Mentions légales</h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About section-->
+        <section class="page-section" style="background-color:#E8A75D;" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h3 class="text-black mt-0 title-font"><strong style="color: #345A61;">Pur Beurre</strong> est une EURL au capital...</h3>
+                        <h5 style="color: #345A61;">Photos: Olenka Kotyk, Kawin Harasai, Greg Jeanneau </h5>
+                        <h5 style="color: #345A61;">Illustrations: Pixar Ratatouille </h5>
+                        <h5 style="color: #345A61;">Logo carrotte: Fabien Jouin </h5>
+                        <h5 style="color: #345A61;">Logo biscuit: PurBeurre </h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0 title-font" style="color: #345A61;">Contactez-nous</h2>
+                        <hr class="divider light my-4" />
+                        <p class=" mb-5" style="color: #345A61;">Besoin d'informations complémentaires? Nous répondons à vos questions!</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                        <div style="color: #345A61;">+1 (555) 123-4567</div>
+                    </div>
+                    <div class="col-lg-4 mr-auto text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i
+                        ><!-- Make sure to      change the email address in BOTH the anchor text and the link target below!--><a style="color: #345A61;" class="d-block" href="mailto:contact@purbeurre.com">contact@purbeurre.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

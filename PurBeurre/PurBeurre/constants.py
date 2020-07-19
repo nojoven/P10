@@ -5,6 +5,10 @@ constants to the project's functions
 
 IMG_URL = "https://static.openfoodfacts.org/images/"\
           "products/301/136/002/3995/front_fr.39.400.jpg"
+
+CATEGORIES_URL = "https://world.openfoodfacts.org/"\
+                 "categories.json"
+
 PRODUCT_EXAMPLE = {
     "idproduct": 44,
     "category": "soup",
@@ -27,4 +31,24 @@ PRODUCT_EXAMPLE = {
     "carbs_100g": 3.20,
     "sodium_100g": 1.03,
     "url": "www.url.com"
+}
+
+FAVOURITE_EXAMPLE = {
+    "productid": 44,
+    "name": "Gazpacho",
+    "nutrigrade": "a",
+    "category": "soup",
+    "replacedid": 191,
+    "userid": 1,
+    "front_img": "www.url.com"
+}
+
+USER_EXAMPLE = {
+    "id": 1,
+    "username": "Arnold6262",
+    "first_name": "Giuseppe",
+    "last_name": "Verdi",
+    "email": "gverdi@gmail.com",
+    "password1": "pasTest2020",
+    "password2": "pasTest2020"
 }

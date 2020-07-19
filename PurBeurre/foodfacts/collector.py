@@ -64,35 +64,6 @@ class Collector:
         for product in products:
             product_data = dict()
             try:
-                # I ignore the products that have missing information
-                if (
-                    not product["stores_tags"]
-                    or not product["quantity"]
-                    or not product["product_name"]
-                    or not product["brands"]
-                    or not product["nutrition_grade_fr"]
-                    or not product["selected_images"][
-                        "front"]["display"]["fr"]
-                    or not product["selected_images"][
-                        "nutrition"]["display"]["fr"]
-                    or not product["selected_images"][
-                        "ingredients"]["display"]["fr"]
-                    or not product["nutriments"]["fat_100g"]
-                    or not product["nutriments"]["sugars_100g"]
-                    or not product["nutriments"][
-                        "saturated-fat_100g"]
-                    or not product["nutriments"][
-                        "energy-kcal_100g"]
-                    or not product["nutriments"][
-                        "nutrition-score-fr_100g"]
-                    or not product["nutriments"]["fiber_100g"]
-                    or not product["nutriments"]["salt_100g"]
-                    or not product["nutriments"]["proteins_100g"]
-                    or not product["nutriments"]["carbohydrates_100g"]
-                    or not product["nutriments"]["sodium_100g"]
-                ):
-                    continue
-
                 product_data = {
                     "category": category,
                     "stores": str(product["stores_tags"])[1:-1],

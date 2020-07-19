@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% load static %}
+        <!-- Masthead-->
+        {% if product is None %}
+        {% include "introuvable.html" %}
+        {% else %}
+        <!-- Masthead-->
+        {% include "mastheadfound.html" %}
+        {% endif %}
+
+
+        <!-- Services section-->
+        <section class="page-section results-bkg" id="results">
+            <div class="container">
+                {% if better is not None %}
+                <h2 class="text-center mt-0">Vous pouvez remplacer cet aliment par : </h2>
+                {% else %}
+                    {% if product.productname is not None %}
+                    <h2 class="text-center mt-0">Il n'existe pas de meilleur produit que {{product.productname}}. </h2>
+                    {% else %}
+                    <h2 class="text-center mt-0">Nous n'avons pas de meilleur produit.</h2>
+                    {% endif %}
+                {% endif %}
+                <hr class="divider my-4" />
+                <div class="row" id="article_div">
+                    {% for b in better %}
+                    <div class="col-lg-3 col-md-6 text-center" id="product_{{forloop.counter }}" style="margin:79px;">
+                        <div class="mt-5 parent-nutri">
+                            <img class="replace-nutri" src={{b.front_img}}>
+                            {% with image="foodfacts/assets/img/icons/NUTRI-SCORE/"|add:b.nutrigrade|add:".png" %}
+                            <img class="score-nutri" src="{% static image %}">
+                            {% endwith %}
+                            <h3 class="h4 mb-2"><a id="details{{ forloop.counter }}" style="color: white;" href="/foodfacts/aliment/{{ b.idproduct }}" name='product_chosen'>{{b.productname}}</a></h3>
+                            <h4 class="mb-0" style="text-transform: uppercase;">{{b.brands}}</h4>
+                            <script>
+
+                                       function postTo(url) {
+                                            var request = (XMLHttpRequest?new XMLHttpRequest():new ActiveXObject());
+                                            request.open('POST', url, true);
+                                            request.setRequestHeader("X-CSRFToken", '{{ csrf_token }}')
+                                            request.send("{}");
+
+                                            location.reload();
+                                        }
+                            </script>
+
+                            {% if request.user.is_authenticated%}
+
+                                {% csrf_token %}
+                                {% if favs is None %}
+                                <a onclick="postTo('/roles/like/{{b.idproduct}}/{{product.idproduct}}/')" href="#" methods="get"><button type="button" class="btn btn-info btn-lg add_to_fav">Add to favourites</button></a>
+
+                                {% else %}
+                                    {% if b.idproduct in favs %}
+                                        <h5>Already favourite</h5>
+                                    {% else %}
+                                <a onclick="postTo('/roles/like/{{b.idproduct}}/{{product.idproduct}}/')" href="#" methods="get"><button type="button" class="btn btn-info btn-lg add_to_fav">Add to favourites</button></a>
+
+                                    {% endif %}
+                                {% endif %}
+
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+</html>

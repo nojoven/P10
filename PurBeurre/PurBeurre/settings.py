@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import psycopg2.extensions
+import django_heroku
+import dj_database_url
+
+# import psycopg2.extensions
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,10 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "3u2!k9u@no&)*3iem^bkft^5bfa)od*l&$m(kl0lnmaedzz=(q"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+if os.environ.get('ENV') == 'PRODUCTION':
+    DEBUG = False
+else:
+    DEBUG = True
 
-
-ALLOWED_HOSTS = ['209.97.178.91']
+ALLOWED_HOSTS = ['beurrepur.herokuapp.com']
 
 # Application definition
 
@@ -38,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -48,14 +54,16 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "PurBeurre.urls"
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["templates"],
+        "DIRS": [os.path.join(BASE_DIR + "/foodfacts", "templates"),
+                 os.path.join(BASE_DIR + "/roles", "templates"),
+                 os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -68,7 +76,9 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = ["roles.EmailBackend.EmailBackend"]
+AUTHENTICATION_BACKENDS = [
+    "roles.EmailBackend.EmailBackend",
+    "django.contrib.auth.backends.AllowAllUsersModelBackend"]
 
 WSGI_APPLICATION = "PurBeurre.wsgi.application"
 
@@ -77,10 +87,10 @@ WSGI_APPLICATION = "PurBeurre.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.postgresql",
         "OPTIONS": {},
         "NAME": "purbeurre",
-        "USER": "root",
+        "USER": "postgres",
         "PASSWORD": "Hamzamal89",
         "HOST": "127.0.0.1",
         "PORT": "5432",
@@ -126,6 +136,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
+STATIC_URL = "/static/"
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

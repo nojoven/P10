@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+    {% block content %}
+        {% load static %}
+        <!-- Masthead-->
+        {% include "mastheadfavs.html" %}
+        <!-- Services section-->
+        <section class="page-section results-bkg" id="results">
+            <div class="container">
+                {% if request.user.is_authenticated%}
+                    {% if favlist|length == 0 %}
+                    <h2 class="text-center mt-0"> Vous n'avez pas encore de favori.</h2>
+                    <hr class="divider my-4" />
+                    {% else %}
+                    <div class="row">
+                        {% for f in favlist %}
+                        <div class="col-lg-3 col-md-6 text-center" style="margin:89px;">
+                            <div class="mt-5 parent-nutri">
+                                <img class="replace-nutri" src={{f.front_img}}>
+                                {% with image="foodfacts/assets/img/icons/NUTRI-SCORE/"|add:f.nutrigrade|add:".png" %}
+                                <img class="score-nutri" src="{% static image %}">
+                                {% endwith %}
+                                <h3 class="h4 mb-2"><a style="color: white;" href="/foodfacts/aliment/{{ f.productid }}" name='product_chosen'>{{f.productname}}</a></h3>
+                                <h4 class="mb-0" style="text-transform: uppercase;">{{f.brands}}</h4>
+                                <form action="/roles/unlike/{{f.productid}}/" class="unlike_form" method="post">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn btn-danger btn-lg" value="Unlike" />
+
+                                </form>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+                </div>
+            </div>
+        </section>
+{% endblock %}

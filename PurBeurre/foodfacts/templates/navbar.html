@@ -1,0 +1,30 @@
+<!-- Navigation-->
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container">
+        <span  style="padding:0; margin: 0; float:left;" >
+            <a href="/foodfacts"><img title="Accueil" src="{% static 'foodfacts/assets/img/logo/logo_pur_beurre.png' %}" width="30%" height="30%"></a>
+        </span>
+        <a name="nav_btn" class="navbar-brand js-scroll-trigger" href="#page-top" style="color:#E8A75D;">Pur Beurre</a><button class="navbar-toggler navbar-toggler-right" style="border: solid 1px #C45525;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger">
+                        <form action="/foodfacts/resultats/" method="get">
+                            <input type="text" id="nav_input" placeholder="  Search..." name="nav_search" value="{{request.GET.nav_search}}" style=" border-color:#C45525; margin-right: 2px; border-radius: 50px;">
+                                <i class="fa fa-search" style="color:#C45525;"></i>
+                        </form>
+                    </a>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="/roles/account"><img title="Compte" src="{% static 'foodfacts/assets/img/icons/mon_compte.png' %}" width="30px" height=30px style="border: solid 1px #C45525; border-radius: 50px;"></a></li>
+                <li class="nav-item"><a href="/roles/favourites"><img title="Favoris" src="{% static 'foodfacts/assets/img/icons/icon_menu.png' %}" width="30px" height=30px style="border: solid 1px #C45525; border-radius: 50px;"></a></li>
+                <li class="nav-item"><a href="/roles/signin" ><img title="Se déconnecter" name="logout_icon" src="{% static 'foodfacts/assets/img/icons/connexion-50.png' %}" width="30px" height=30px style="border: solid 6px red; border-radius: 50px;"></a></li>
+                {% else %}
+                <li class="nav-item"><a href="/roles/signin" ><img title="Connexion" name="login_icon" src="{% static 'foodfacts/assets/img/icons/connexion-50.png' %}" width="30px" height=30px style="border: solid 6px green; border-radius: 50px;"></a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact" style="color:#E8A75D;">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

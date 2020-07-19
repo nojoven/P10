@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <link href="{% static 'foodfacts/styles.css' %}" rel="stylesheet" />
+    {% include "styletag.html" %}
+</head>
+<body id="page-top">
+<!-- Navbar -->
+{% include "navbar.html" %}
+    {% block content %}
+    {% endblock %}
+<!-- Footer-->
+{% include "footer.html" %}
+<!-- Core theme JS-->
+<script src="{% static 'foodfacts/js/scripts.js' %}"></script>
+</body>
+</html>
