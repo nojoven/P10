@@ -30,4 +30,4 @@ script:
 # safelist
 branches:
   only:
-    - newstaging
+    - newP10
