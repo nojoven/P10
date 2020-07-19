@@ -10,9 +10,10 @@ python:
 
 before_script:
   - pip3 install -r requirements.txt
-  - pip install chromedriver-py
-
-env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+  - LATEST_CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"`
+  - curl "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O env: 
+DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+  - unzip chromedriver_linux64.zip -d ~/bin
 
 services:
   - postgresql
