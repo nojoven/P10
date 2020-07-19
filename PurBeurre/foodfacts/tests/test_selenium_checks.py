@@ -4,7 +4,7 @@ It will use Selenium.
 """
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from webdriver_manager.chrome import ChromeDriverManage
+from webdriver_manager.chrome import ChromeDriverManager
 
 class MySeleniumTests(StaticLiveServerTestCase):
     """
