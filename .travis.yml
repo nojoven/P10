@@ -10,7 +10,7 @@ python:
 
 before_script:
   - pip3 install -r requirements.txt
-  - LATEST_CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/84.0.4147.30"`
+  - curl -s "https://chromedriver.storage.googleapis.com/84.0.4147.30"
   - curl "https://chromedriver.storage.googleapis.com/${84.0.4147.30}/chromedriver_linux64.zip" -O env: 
 DJANGO_SETTINGS_MODULE="PurBeurre.settings"
   - unzip chromedriver_linux64.zip -d ~/bin
