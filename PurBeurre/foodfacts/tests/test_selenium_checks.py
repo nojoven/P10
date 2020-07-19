@@ -28,7 +28,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         """
         logging.info("Starting selenium")
         print("Starting selenium")
-        self.driver.close()
+
         # First we go full screen
         self.driver.maximize_window()
         logging.info("Window maximized")
@@ -37,6 +37,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
+        self.driver.close()
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
