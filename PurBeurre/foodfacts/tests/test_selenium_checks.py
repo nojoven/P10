@@ -17,7 +17,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     options.add_argument('--headless')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument("--disable-extensions")
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     driver.implicitly_wait(30000)
 
     def test_browser(self):
