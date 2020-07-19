@@ -12,7 +12,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     simulate the behaviour of a human user.
     """
     options = webdriver.ChromeOptions()
-    options.add_argument("--disable-extensions")
+   
     options.add_argument("--no-sandbox") 
     options.add_argument("--disable-setuid-sandbox") 
 
@@ -22,10 +22,10 @@ class MySeleniumTests(StaticLiveServerTestCase):
     options.add_argument("--disable-extensions") 
     options.add_argument("--disable-gpu") 
     options.add_argument("disable-infobars") 
-    options.add_argument("headless")
+    options.add_argument("--headless")
 
 
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     driver.implicitly_wait(24000)
 
     def test_browser(self):
