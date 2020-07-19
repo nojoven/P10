@@ -10,9 +10,9 @@ python:
 
 before_script:
   - pip3 install -r requirements.txt
-  - LATEST_CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/84.0.4147.30"`
-  - curl "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O
-  - unzip chromedriver_linux64.zip -d ~/home/travis/.wdm/drivers/chromedriver/84.0.4147.30/linux64/chromedriver.zip
+  - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d ~/home/travis/.wdm/drivers/chromedriver/84.0.4147.30
+  - export CHROME_BIN=chromium-browser
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
 
