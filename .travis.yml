@@ -10,17 +10,17 @@ python:
   - "3.6"
 
 addons:
-  chrome: stable --remote-debugging-port=9222 http://localhost &
+  chrome: stable 
+
+before_install:
+  - # start your web application and listen on `localhost`
+  - chromium-browser --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 before_script:
   - pip3 install -r requirements.txt
   - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d ~/
   - export CHROME_BIN=chromium-browser
-
-after_failure:
-  - if [ -f tests/tests.log ]; then cat tests/tests.log && sleep 10; fi
-  - echo == End of test log ==
 
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
