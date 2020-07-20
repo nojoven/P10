@@ -43,7 +43,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("Got localhost")
         print("Got localhost")
 
-        print(self.driver.get_log('driver'))
+        print(self.driver.get_log())
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
