@@ -3,7 +3,11 @@ before_install:
   - cd ./PurBeurre
   - export PYTHONPATH="$(pwd)"
   - chmod +x manage.py
-  - google-chrome-stable --headless --disable-gpu
+  - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip -d ~/
+  - export CHROME_BIN=chromium-browser
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &  
+
 
 language: python
 python:
@@ -11,13 +15,6 @@ python:
 
 addons:
   chrome: stable 
-
-before_install:
-  - # start your web application and listen on `localhost`
-  - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip -d ~/
-  - export CHROME_BIN=chromium-browser
-  - chromium-browser --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 before_script:
   - pip3 install -r requirements.txt
