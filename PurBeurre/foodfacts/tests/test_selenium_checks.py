@@ -19,7 +19,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument("--disable-extensions")
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    driver.implicitly_wait(30000)
+    driver.implicitly_wait(10)
 
     def test_browser(self):
         """
@@ -41,9 +41,9 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
+
         logging.info("Home title contains 'GRAS'")
         print("Home title contains 'GRAS'")
-        self.driver.close()
         # Then we go on the sigin page
         self.driver.get("http://localhost:8000/roles/signin/")
         logging.info("Asking signin page")
