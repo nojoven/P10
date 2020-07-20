@@ -9,13 +9,8 @@ language: python
 python:
   - "3.6"
 
-before_install:
-  - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-
-
 addons:
-  chrome: stable
+  chrome: stable --remote-debugging-port=9222 http://localhost &
 
 before_script:
   - pip3 install -r requirements.txt
