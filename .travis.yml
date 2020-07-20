@@ -3,7 +3,7 @@ before_install:
   - cd ./PurBeurre
   - export PYTHONPATH="$(pwd)"
   - chmod +x manage.py
-  - google-chrome-stable --headless --disable-gpu
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 language: python
 python:
@@ -11,7 +11,6 @@ python:
 
 addons:
   chrome: stable
-  firefox: latest
 
 before_script:
   - pip3 install -r requirements.txt
