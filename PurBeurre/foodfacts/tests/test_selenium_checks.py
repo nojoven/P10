@@ -34,9 +34,16 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("Window maximized")
         print("Window maximized")
         # Then we go on the website
-        self.driver.get("http://localhost:8000/foodfacts/")
+        res = self.driver.get("http://localhost:8000/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
+        print(f"response is {res}")
+
+
+        self.assertURLEqual("http://localhost:8000/foodfacts/")
+        print("URL OK")
+
+
 
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
