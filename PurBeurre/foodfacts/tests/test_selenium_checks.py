@@ -5,6 +5,7 @@ It will use Selenium.
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.common.exceptions import WebDriverException
 import logging
 
 class MySeleniumTests(StaticLiveServerTestCase):
@@ -19,7 +20,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument("--disable-extensions")
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    driver.implicitly_wait(10)
+
+    driver.implicitly_wait(4)
 
     def test_browser(self):
         """
@@ -34,11 +36,10 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("Window maximized")
         print("Window maximized")
         # Then we go on the website
-        res = self.driver.get("http://localhost:8000/foodfacts/")
+        self.driver.get("http://localhost:8000/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
-        print(f"response is {res}")
-
+        self.driver.get_log('driver')
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
