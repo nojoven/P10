@@ -6,7 +6,7 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d ~/
   - export CHROME_BIN=chromium-browser
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &  
+  - python manage.py runserver
 
 
 language: python
