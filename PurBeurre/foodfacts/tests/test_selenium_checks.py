@@ -39,7 +39,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.driver.get("http://localhost:8000/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
-        self.driver.get_log('driver')
+
+        print(self.driver.get_log('driver'))
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
