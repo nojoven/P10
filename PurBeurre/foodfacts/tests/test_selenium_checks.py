@@ -38,8 +38,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # Then we go on the website
         self.driver.start_client()
 
-
-        self.driver.get("http://localhost:8000/foodfacts/")
+        self.driver.get("https://beurrepur.herokuapp.com/foodfacts")
         logging.info("Got localhost")
         print("Got localhost")
         self.assertIn(
@@ -49,7 +48,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("Home title contains 'GRAS'")
         print("Home title contains 'GRAS'")
         # Then we go on the sigin page
-        self.driver.get("http://localhost:8000/roles/signin/")
+        self.driver.get("https://beurrepur.herokuapp.com/roles/signin/")
         logging.info("Asking signin page")
         print("Asking signin page")
         self.assertIn(
