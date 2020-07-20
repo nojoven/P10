@@ -37,8 +37,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         print("Window maximized")
         # Then we go on the website
         self.driver.start_client()
-        self.driver.start_session()
-        
+
 
         self.driver.get("http://localhost:8000/foodfacts/")
         logging.info("Got localhost")
