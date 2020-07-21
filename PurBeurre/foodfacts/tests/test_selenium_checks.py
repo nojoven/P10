@@ -5,6 +5,7 @@ It will use Selenium.
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.common.exceptions import WebDriverException
 import logging
 
 class MySeleniumTests(StaticLiveServerTestCase):
@@ -14,12 +15,11 @@ class MySeleniumTests(StaticLiveServerTestCase):
     """
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--no-sandbox')
     options.add_argument('--headless')
-    options.add_argument('--disable-dev-shm-usage')
     options.add_argument("--disable-extensions")
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    driver.implicitly_wait(30000)
+
+    driver.implicitly_wait(4)
 
     def test_browser(self):
         """
@@ -28,21 +28,26 @@ class MySeleniumTests(StaticLiveServerTestCase):
         """
         logging.info("Starting selenium")
         print("Starting selenium")
+
         # First we go full screen
         self.driver.maximize_window()
         logging.info("Window maximized")
         print("Window maximized")
         # Then we go on the website
-        self.driver.get("http://localhost:8000/foodfacts/")
+        self.driver.start_client()
+
+
+        self.driver.get("https://beurrepur.herokuapp.com/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
         self.assertIn(
             "GRAS", self.driver.find_element_by_id(
                 "main_title").text)
+
         logging.info("Home title contains 'GRAS'")
         print("Home title contains 'GRAS'")
         # Then we go on the sigin page
-        self.driver.get("http://localhost:8000/roles/signin/")
+        self.driver.get("https://beurrepur.herokuapp.com/roles/signin/")
         logging.info("Asking signin page")
         print("Asking signin page")
         self.assertIn(
@@ -96,7 +101,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("One product is now a favourite")
         print("One product is now a favourite")
         # We go to the favourites page
-        self.driver.get("http://localhost:8000/roles/favourites")
+        self.driver.get("https://beurrepur.herokuapp.com/roles/favourites")
         self.assertIn(
             "VOS FAVORIS", self.driver.find_element_by_tag_name("h1").text
         )
@@ -110,7 +115,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # This is because of the browser's cache
         self.driver.refresh()
         # We log out
-        self.driver.get("http://localhost:8000/roles/signin/")
+        self.driver.get("https://beurrepur.herokuapp.com/roles/signin/")
         # submit
         self.assertIn(
             "CONNEXION", self.driver.find_element_by_tag_name("h1").text
