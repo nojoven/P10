@@ -101,7 +101,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("One product is now a favourite")
         print("One product is now a favourite")
         # We go to the favourites page
-        self.driver.get("http://localhost:8000/roles/favourites")
+        self.driver.get("https://beurrepur.herokuapp.com/roles/favourites")
         self.assertIn(
             "VOS FAVORIS", self.driver.find_element_by_tag_name("h1").text
         )
@@ -115,7 +115,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # This is because of the browser's cache
         self.driver.refresh()
         # We log out
-        self.driver.get("http://localhost:8000/roles/signin/")
+        self.driver.get("https://beurrepur.herokuapp.com/roles/signin/")
         # submit
         self.assertIn(
             "CONNEXION", self.driver.find_element_by_tag_name("h1").text
