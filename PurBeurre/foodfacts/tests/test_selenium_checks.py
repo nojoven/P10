@@ -38,7 +38,8 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # Then we go on the website
         self.driver.start_client()
 
-        self.driver.get("https://beurrepur.herokuapp.com/foodfacts")
+
+        self.driver.get("https://beurrepur.herokuapp.com/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
         self.assertIn(
