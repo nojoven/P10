@@ -12,7 +12,7 @@ python:
   - "3.6"
 
 addons:
-  chrome: stable 
+  chrome: stable
 
 before_script:
   - pip3 install -r requirements.txt
