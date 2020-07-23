@@ -18,6 +18,7 @@ before_script:
   - pip3 install -r requirements.txt
   - sudo psql -c "CREATE DATABASE purbeurre;" -U postgres
   - sudo psql -c "CREATE USER root WITH PASSWORD 'Hamzamal89';" -U postgres
+  - postgres=# ALTER USER root WITH SUPERUSER; ALTER ROLE 
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py fill_db
