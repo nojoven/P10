@@ -21,7 +21,7 @@ before_script:
   - pip3 install -r requirements.txt
   - psql -c "CREATE DATABASE purbeurre;" -U postgres
   - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB;" -U postgres
-  - python manage.py makemigrations 'foodfacts'
+  - python manage.py makemigrations foodfacts
   - python manage.py migrate
   - psql -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
   - psql -c "INSERT INTO auth_user(password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined)	VALUES ('Niam1989', null, false, 'LeUsernameTest', 'David', 'Joseph', 'monami@gmail.com', false, true, '2020-05-08 21:38:12.033215+00')"
