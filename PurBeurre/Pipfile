@@ -25,6 +25,9 @@ whitenoise = "*"
 pip = "*"
 pytest-cov = "*"
 django-crispy-forms = "*"
+raven = "*"
+sentry-sdk = "*"
+aiocontextvars = "*"
 
 [requires]
 python_version = "3.7"
