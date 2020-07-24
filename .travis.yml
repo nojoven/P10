@@ -28,8 +28,9 @@ before_script:
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
 
 script:
-  - python manage.py makemigrations 
-  - python manage.py migrate --fake-initial
+  - python manage.py makemigrations
+  - python manage.py showmigrations 
+  - python manage.py migrate
   - python manage.py fill_db
   - python manage.py test
 
