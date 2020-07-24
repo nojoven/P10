@@ -29,10 +29,10 @@ before_script:
 
 
 
-env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+env: 
+  - DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+  - DB=postgresql  
 
-services:
-  - postgresql
 
 script:
   - python manage.py test
