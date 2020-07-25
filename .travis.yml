@@ -24,6 +24,7 @@ before_script:
   - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8'CONNECTION LIMIT = -1;"
   - python manage.py makemigrations
   - python manage.py showmigrations
+  - python manage.py migrate auth
   - python manage.py migrate
   - psql -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
 
