@@ -17,6 +17,8 @@ addons:
 services:
   - postgresql
 
+env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+
 before_script:
   - pip3 install -r requirements.txt
   - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
@@ -28,9 +30,6 @@ before_script:
   - python manage.py migrate
   - psql -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
 
-
-
-env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
 
 script:
   - psql -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
