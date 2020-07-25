@@ -19,7 +19,9 @@ services:
 
 before_script:
   - pip3 install -r requirements.txt
-  - psql -c "create database purbeurre;" -U postgres
+  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8'CONNECTION LIMIT = -1";
+  - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB;" -U postgres
+  - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'"; -U postgres
 
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
