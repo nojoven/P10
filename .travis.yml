@@ -24,7 +24,7 @@ before_script:
   - pip3 install -r requirements.txt
   - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
   - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'";
-  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8'CONNECTION LIMIT = -1;"
+  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'ANSI' CONNECTION LIMIT = -1;"
   - psql purbeurre < output.sql
   - python manage.py makemigrations foodfacts
   - python manage.py migrate
