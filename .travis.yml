@@ -24,7 +24,7 @@ before_script:
   - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
   - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'";
   - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8'CONNECTION LIMIT = -1;"
-  - cat data.json | sed 's/"/""/g' | cat <(echo '"') - <(echo '"') | \ psql -c 'COPY import(data) FROM STDIN (FORMAT CSV)'
+  - cat data.json | sed 's/"/""/g' | cat <(echo '"') - <(echo '"') | psql -c 'COPY import(data) FROM STDIN (FORMAT CSV)'
   - python manage.py makemigrations
   - python manage.py showmigrations
   - python manage.py migrate auth
