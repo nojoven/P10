@@ -25,15 +25,11 @@ before_script:
   - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
   - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'";
   - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
-  - psql purbeurre < bdd.sql
-  - psql -U root -d purbeurre -f bdd.sql
-  - python manage.py makemigrations foodfacts
-  - python manage.py migrate
+  - psql purbeurre < herokubase.sql
   - psql -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
 
 
 script:
-  - python manage.py fill_db
   - python manage.py test
 
 # safelist
