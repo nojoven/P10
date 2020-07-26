@@ -23,9 +23,10 @@ addons:
 services:
   - postgresql
 
-env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+env:
   global:
-    - PGPORT=5433
+    - DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+    - PGPORT=5432
 
 before_script:
   - pip3 install -r requirements.txt
