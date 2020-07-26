@@ -13,10 +13,11 @@ python:
   - "3.6"
 
 addons:
-  chrome: stable 
+  chrome: stable
+  postgresql: "12.3"
 
 services:
-  postgresql: "12.2"
+  - postgresql
 
 env: DJANGO_SETTINGS_MODULE="PurBeurre.settings"
 
