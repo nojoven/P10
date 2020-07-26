@@ -15,6 +15,7 @@ import django_heroku
 import dj_database_url
 import raven
 import sentry_sdk
+from django.test import LiveServerTestCase
 from sentry_sdk.integrations.django import DjangoIntegration
 
 import psycopg2.extensions
@@ -96,7 +97,7 @@ DATABASES = {
         "NAME": "purbeurre",
         "USER": "root",
         "PASSWORD": "Hamzamal89",
-        "HOST": "localhost",
+        "HOST": LiveServerTestCase.live_server_url,
         "PORT": "5433",
     }
 }
