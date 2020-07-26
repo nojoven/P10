@@ -26,7 +26,7 @@ services:
 env:
   global:
     - DJANGO_SETTINGS_MODULE="PurBeurre.settings"
-    - PGPORT=5432
+    - PGPORT=5433
 
 before_script:
   - pip3 install -r requirements.txt
