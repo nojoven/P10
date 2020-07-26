@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 import dj_database_url
 import raven
 import sentry_sdk
@@ -145,6 +146,8 @@ DATABASES['default'].update(db_from_env)
 
 STATIC_URL = "/static/"
 
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
 sentry_sdk.init(
     dsn="https://12cc08a9fb6142ddbb1568508b89c014@o423877.ingest.sentry.io/5354844",
