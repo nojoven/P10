@@ -24,7 +24,7 @@ SET default_table_access_method = heap;
 
 --
 -- TOC entry 202 (class 1259 OID 861548)
--- Name: auth_group; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.auth_group (
@@ -33,11 +33,11 @@ CREATE TABLE public.auth_group (
 );
 
 
-ALTER TABLE public.auth_group OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_group OWNER TO root;
 
 --
 -- TOC entry 203 (class 1259 OID 861551)
--- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.auth_group_id_seq
@@ -49,12 +49,12 @@ CREATE SEQUENCE public.auth_group_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_group_id_seq OWNER TO root;
 
 --
 -- TOC entry 4012 (class 0 OID 0)
 -- Dependencies: 203
--- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
@@ -62,7 +62,7 @@ ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
 
 --
 -- TOC entry 204 (class 1259 OID 861553)
--- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.auth_group_permissions (
@@ -72,11 +72,11 @@ CREATE TABLE public.auth_group_permissions (
 );
 
 
-ALTER TABLE public.auth_group_permissions OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_group_permissions OWNER TO root;
 
 --
 -- TOC entry 205 (class 1259 OID 861556)
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.auth_group_permissions_id_seq
@@ -88,12 +88,12 @@ CREATE SEQUENCE public.auth_group_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_permissions_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO root;
 
 --
 -- TOC entry 4013 (class 0 OID 0)
 -- Dependencies: 205
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_permissions.id;
@@ -101,7 +101,7 @@ ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_p
 
 --
 -- TOC entry 206 (class 1259 OID 861558)
--- Name: auth_permission; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.auth_permission (
@@ -112,11 +112,11 @@ CREATE TABLE public.auth_permission (
 );
 
 
-ALTER TABLE public.auth_permission OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_permission OWNER TO root;
 
 --
 -- TOC entry 207 (class 1259 OID 861561)
--- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.auth_permission_id_seq
@@ -128,12 +128,12 @@ CREATE SEQUENCE public.auth_permission_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_permission_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_permission_id_seq OWNER TO root;
 
 --
 -- TOC entry 4014 (class 0 OID 0)
 -- Dependencies: 207
--- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
@@ -141,7 +141,7 @@ ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
 
 --
 -- TOC entry 208 (class 1259 OID 861563)
--- Name: auth_user; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.auth_user (
@@ -159,11 +159,11 @@ CREATE TABLE public.auth_user (
 );
 
 
-ALTER TABLE public.auth_user OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_user OWNER TO root;
 
 --
 -- TOC entry 209 (class 1259 OID 861569)
--- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.auth_user_groups (
@@ -173,11 +173,11 @@ CREATE TABLE public.auth_user_groups (
 );
 
 
-ALTER TABLE public.auth_user_groups OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_user_groups OWNER TO root;
 
 --
 -- TOC entry 210 (class 1259 OID 861572)
--- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.auth_user_groups_id_seq
@@ -189,12 +189,12 @@ CREATE SEQUENCE public.auth_user_groups_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_groups_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO root;
 
 --
 -- TOC entry 4015 (class 0 OID 0)
 -- Dependencies: 210
--- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.auth_user_groups_id_seq OWNED BY public.auth_user_groups.id;
@@ -202,7 +202,7 @@ ALTER SEQUENCE public.auth_user_groups_id_seq OWNED BY public.auth_user_groups.i
 
 --
 -- TOC entry 211 (class 1259 OID 861574)
--- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.auth_user_id_seq
@@ -214,12 +214,12 @@ CREATE SEQUENCE public.auth_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_user_id_seq OWNER TO root;
 
 --
 -- TOC entry 4016 (class 0 OID 0)
 -- Dependencies: 211
--- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.auth_user_id_seq OWNED BY public.auth_user.id;
@@ -227,7 +227,7 @@ ALTER SEQUENCE public.auth_user_id_seq OWNED BY public.auth_user.id;
 
 --
 -- TOC entry 212 (class 1259 OID 861576)
--- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.auth_user_user_permissions (
@@ -237,11 +237,11 @@ CREATE TABLE public.auth_user_user_permissions (
 );
 
 
-ALTER TABLE public.auth_user_user_permissions OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_user_user_permissions OWNER TO root;
 
 --
 -- TOC entry 213 (class 1259 OID 861579)
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.auth_user_user_permissions_id_seq
@@ -253,12 +253,12 @@ CREATE SEQUENCE public.auth_user_user_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO root;
 
 --
 -- TOC entry 4017 (class 0 OID 0)
 -- Dependencies: 213
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.auth_user_user_permissions_id_seq OWNED BY public.auth_user_user_permissions.id;
@@ -266,7 +266,7 @@ ALTER SEQUENCE public.auth_user_user_permissions_id_seq OWNED BY public.auth_use
 
 --
 -- TOC entry 214 (class 1259 OID 861581)
--- Name: categories; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: categories; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.categories (
@@ -275,11 +275,11 @@ CREATE TABLE public.categories (
 );
 
 
-ALTER TABLE public.categories OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.categories OWNER TO root;
 
 --
 -- TOC entry 215 (class 1259 OID 861584)
--- Name: categories_idCategories_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: categories_idCategories_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public."categories_idCategories_seq"
@@ -291,12 +291,12 @@ CREATE SEQUENCE public."categories_idCategories_seq"
     CACHE 1;
 
 
-ALTER TABLE public."categories_idCategories_seq" OWNER TO thpbpfbsiueftm;
+ALTER TABLE public."categories_idCategories_seq" OWNER TO root;
 
 --
 -- TOC entry 4018 (class 0 OID 0)
 -- Dependencies: 215
--- Name: categories_idCategories_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: categories_idCategories_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public."categories_idCategories_seq" OWNED BY public.categories.idcategories;
@@ -304,7 +304,7 @@ ALTER SEQUENCE public."categories_idCategories_seq" OWNED BY public.categories.i
 
 --
 -- TOC entry 216 (class 1259 OID 861586)
--- Name: django_admin_log; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.django_admin_log (
@@ -320,11 +320,11 @@ CREATE TABLE public.django_admin_log (
 );
 
 
-ALTER TABLE public.django_admin_log OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_admin_log OWNER TO root;
 
 --
 -- TOC entry 217 (class 1259 OID 861593)
--- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.django_admin_log_id_seq
@@ -336,12 +336,12 @@ CREATE SEQUENCE public.django_admin_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_admin_log_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_admin_log_id_seq OWNER TO root;
 
 --
 -- TOC entry 4019 (class 0 OID 0)
 -- Dependencies: 217
--- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.id;
@@ -349,7 +349,7 @@ ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.i
 
 --
 -- TOC entry 218 (class 1259 OID 861595)
--- Name: django_content_type; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.django_content_type (
@@ -359,11 +359,11 @@ CREATE TABLE public.django_content_type (
 );
 
 
-ALTER TABLE public.django_content_type OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_content_type OWNER TO root;
 
 --
 -- TOC entry 219 (class 1259 OID 861598)
--- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.django_content_type_id_seq
@@ -375,12 +375,12 @@ CREATE SEQUENCE public.django_content_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_content_type_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_content_type_id_seq OWNER TO root;
 
 --
 -- TOC entry 4020 (class 0 OID 0)
 -- Dependencies: 219
--- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_type.id;
@@ -388,7 +388,7 @@ ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_
 
 --
 -- TOC entry 220 (class 1259 OID 861600)
--- Name: django_migrations; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.django_migrations (
@@ -399,11 +399,11 @@ CREATE TABLE public.django_migrations (
 );
 
 
-ALTER TABLE public.django_migrations OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_migrations OWNER TO root;
 
 --
 -- TOC entry 221 (class 1259 OID 861606)
--- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public.django_migrations_id_seq
@@ -415,12 +415,12 @@ CREATE SEQUENCE public.django_migrations_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_migrations_id_seq OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_migrations_id_seq OWNER TO root;
 
 --
 -- TOC entry 4021 (class 0 OID 0)
 -- Dependencies: 221
--- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations.id;
@@ -428,7 +428,7 @@ ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations
 
 --
 -- TOC entry 222 (class 1259 OID 861608)
--- Name: django_session; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_session; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.django_session (
@@ -438,11 +438,11 @@ CREATE TABLE public.django_session (
 );
 
 
-ALTER TABLE public.django_session OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.django_session OWNER TO root;
 
 --
 -- TOC entry 223 (class 1259 OID 861614)
--- Name: favorites; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: favorites; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.favorites (
@@ -457,11 +457,11 @@ CREATE TABLE public.favorites (
 );
 
 
-ALTER TABLE public.favorites OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.favorites OWNER TO root;
 
 --
 -- TOC entry 224 (class 1259 OID 861620)
--- Name: favorites_FavoriteID_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: favorites_FavoriteID_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public."favorites_FavoriteID_seq"
@@ -473,12 +473,12 @@ CREATE SEQUENCE public."favorites_FavoriteID_seq"
     CACHE 1;
 
 
-ALTER TABLE public."favorites_FavoriteID_seq" OWNER TO thpbpfbsiueftm;
+ALTER TABLE public."favorites_FavoriteID_seq" OWNER TO root;
 
 --
 -- TOC entry 4022 (class 0 OID 0)
 -- Dependencies: 224
--- Name: favorites_FavoriteID_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: favorites_FavoriteID_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public."favorites_FavoriteID_seq" OWNED BY public.favorites.favoriteid;
@@ -486,7 +486,7 @@ ALTER SEQUENCE public."favorites_FavoriteID_seq" OWNED BY public.favorites.favor
 
 --
 -- TOC entry 225 (class 1259 OID 861622)
--- Name: products; Type: TABLE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: products; Type: TABLE; Schema: public; Owner: root
 --
 
 CREATE TABLE public.products (
@@ -514,11 +514,11 @@ CREATE TABLE public.products (
 );
 
 
-ALTER TABLE public.products OWNER TO thpbpfbsiueftm;
+ALTER TABLE public.products OWNER TO root;
 
 --
 -- TOC entry 226 (class 1259 OID 861628)
--- Name: products_idProduct_seq; Type: SEQUENCE; Schema: public; Owner: thpbpfbsiueftm
+-- Name: products_idProduct_seq; Type: SEQUENCE; Schema: public; Owner: root
 --
 
 CREATE SEQUENCE public."products_idProduct_seq"
@@ -530,12 +530,12 @@ CREATE SEQUENCE public."products_idProduct_seq"
     CACHE 1;
 
 
-ALTER TABLE public."products_idProduct_seq" OWNER TO thpbpfbsiueftm;
+ALTER TABLE public."products_idProduct_seq" OWNER TO root;
 
 --
 -- TOC entry 4023 (class 0 OID 0)
 -- Dependencies: 226
--- Name: products_idProduct_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: thpbpfbsiueftm
+-- Name: products_idProduct_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
 --
 
 ALTER SEQUENCE public."products_idProduct_seq" OWNED BY public.products.idproduct;
@@ -543,7 +543,7 @@ ALTER SEQUENCE public."products_idProduct_seq" OWNED BY public.products.idproduc
 
 --
 -- TOC entry 3779 (class 2604 OID 861630)
--- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.auth_group_id_seq'::regclass);
@@ -551,7 +551,7 @@ ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.a
 
 --
 -- TOC entry 3780 (class 2604 OID 861631)
--- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_group_permissions_id_seq'::regclass);
@@ -559,7 +559,7 @@ ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextv
 
 --
 -- TOC entry 3781 (class 2604 OID 861632)
--- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('public.auth_permission_id_seq'::regclass);
@@ -567,7 +567,7 @@ ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('pub
 
 --
 -- TOC entry 3782 (class 2604 OID 861633)
--- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user ALTER COLUMN id SET DEFAULT nextval('public.auth_user_id_seq'::regclass);
@@ -575,7 +575,7 @@ ALTER TABLE ONLY public.auth_user ALTER COLUMN id SET DEFAULT nextval('public.au
 
 --
 -- TOC entry 3783 (class 2604 OID 861634)
--- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_groups ALTER COLUMN id SET DEFAULT nextval('public.auth_user_groups_id_seq'::regclass);
@@ -583,7 +583,7 @@ ALTER TABLE ONLY public.auth_user_groups ALTER COLUMN id SET DEFAULT nextval('pu
 
 --
 -- TOC entry 3784 (class 2604 OID 861635)
--- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_user_user_permissions_id_seq'::regclass);
@@ -591,7 +591,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions ALTER COLUMN id SET DEFAULT n
 
 --
 -- TOC entry 3785 (class 2604 OID 861636)
--- Name: categories idcategories; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: categories idcategories; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.categories ALTER COLUMN idcategories SET DEFAULT nextval('public."categories_idCategories_seq"'::regclass);
@@ -599,7 +599,7 @@ ALTER TABLE ONLY public.categories ALTER COLUMN idcategories SET DEFAULT nextval
 
 --
 -- TOC entry 3786 (class 2604 OID 861637)
--- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('public.django_admin_log_id_seq'::regclass);
@@ -607,7 +607,7 @@ ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('pu
 
 --
 -- TOC entry 3788 (class 2604 OID 861638)
--- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval('public.django_content_type_id_seq'::regclass);
@@ -615,7 +615,7 @@ ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval(
 
 --
 -- TOC entry 3789 (class 2604 OID 861639)
--- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
@@ -623,7 +623,7 @@ ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('p
 
 --
 -- TOC entry 3790 (class 2604 OID 861640)
--- Name: favorites favoriteid; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: favorites favoriteid; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.favorites ALTER COLUMN favoriteid SET DEFAULT nextval('public."favorites_FavoriteID_seq"'::regclass);
@@ -631,7 +631,7 @@ ALTER TABLE ONLY public.favorites ALTER COLUMN favoriteid SET DEFAULT nextval('p
 
 --
 -- TOC entry 3791 (class 2604 OID 861641)
--- Name: products idproduct; Type: DEFAULT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: products idproduct; Type: DEFAULT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.products ALTER COLUMN idproduct SET DEFAULT nextval('public."products_idProduct_seq"'::regclass);
@@ -640,7 +640,7 @@ ALTER TABLE ONLY public.products ALTER COLUMN idproduct SET DEFAULT nextval('pub
 --
 -- TOC entry 3980 (class 0 OID 861548)
 -- Dependencies: 202
--- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.auth_group (id, name) FROM stdin;
@@ -650,7 +650,7 @@ COPY public.auth_group (id, name) FROM stdin;
 --
 -- TOC entry 3982 (class 0 OID 861553)
 -- Dependencies: 204
--- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
@@ -660,7 +660,7 @@ COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
 --
 -- TOC entry 3984 (class 0 OID 861558)
 -- Dependencies: 206
--- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
@@ -706,7 +706,7 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 -- TOC entry 3986 (class 0 OID 861563)
 -- Dependencies: 208
--- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
@@ -728,7 +728,7 @@ COPY public.auth_user (id, password, last_login, is_superuser, username, first_n
 --
 -- TOC entry 3987 (class 0 OID 861569)
 -- Dependencies: 209
--- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
@@ -738,7 +738,7 @@ COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
 --
 -- TOC entry 3990 (class 0 OID 861576)
 -- Dependencies: 212
--- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
@@ -748,7 +748,7 @@ COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
 --
 -- TOC entry 3992 (class 0 OID 861581)
 -- Dependencies: 214
--- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.categories (idcategories, name) FROM stdin;
@@ -763,7 +763,7 @@ COPY public.categories (idcategories, name) FROM stdin;
 --
 -- TOC entry 3994 (class 0 OID 861586)
 -- Dependencies: 216
--- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
@@ -773,7 +773,7 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 --
 -- TOC entry 3996 (class 0 OID 861595)
 -- Dependencies: 218
--- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.django_content_type (id, app_label, model) FROM stdin;
@@ -792,7 +792,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 --
 -- TOC entry 3998 (class 0 OID 861600)
 -- Dependencies: 220
--- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
@@ -827,7 +827,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 --
 -- TOC entry 4000 (class 0 OID 861608)
 -- Dependencies: 222
--- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
@@ -883,7 +883,7 @@ c37b9zxfhd700jmlyybu6cdqx9xbb0ue	NGYxMGE1OGE3ZTY4ZmRkY2JiMmJlZDY5MWMzNjJmNjdmZjl
 --
 -- TOC entry 4001 (class 0 OID 861614)
 -- Dependencies: 223
--- Data for Name: favorites; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: favorites; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.favorites (favoriteid, productid, name, nutrigrade, category, replacedid, userid, front_img) FROM stdin;
@@ -896,7 +896,7 @@ COPY public.favorites (favoriteid, productid, name, nutrigrade, category, replac
 --
 -- TOC entry 4003 (class 0 OID 861622)
 -- Dependencies: 225
--- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: thpbpfbsiueftm
+-- Data for Name: products; Type: TABLE DATA; Schema: public; Owner: root
 --
 
 COPY public.products (idproduct, productname, stores, brands, nutrigrade, category, quantity, fat_100g, sugars_100g, saturated_fat_100g, energy_kcal_100g, "nutrition_Score_100g", fiber_100g, salt_100g, proteins_100g, carbs_100g, sodium_100g, front_img, nutrition_img, ingredients_img, url) FROM stdin;
@@ -4452,7 +4452,7 @@ COPY public.products (idproduct, productname, stores, brands, nutrigrade, catego
 --
 -- TOC entry 4024 (class 0 OID 0)
 -- Dependencies: 203
--- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
@@ -4461,7 +4461,7 @@ SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
 --
 -- TOC entry 4025 (class 0 OID 0)
 -- Dependencies: 205
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
@@ -4470,7 +4470,7 @@ SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 --
 -- TOC entry 4026 (class 0 OID 0)
 -- Dependencies: 207
--- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.auth_permission_id_seq', 36, true);
@@ -4479,7 +4479,7 @@ SELECT pg_catalog.setval('public.auth_permission_id_seq', 36, true);
 --
 -- TOC entry 4027 (class 0 OID 0)
 -- Dependencies: 210
--- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
@@ -4488,7 +4488,7 @@ SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 --
 -- TOC entry 4028 (class 0 OID 0)
 -- Dependencies: 211
--- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.auth_user_id_seq', 12, true);
@@ -4497,7 +4497,7 @@ SELECT pg_catalog.setval('public.auth_user_id_seq', 12, true);
 --
 -- TOC entry 4029 (class 0 OID 0)
 -- Dependencies: 213
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
@@ -4506,7 +4506,7 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 --
 -- TOC entry 4030 (class 0 OID 0)
 -- Dependencies: 215
--- Name: categories_idCategories_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: categories_idCategories_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public."categories_idCategories_seq"', 10, true);
@@ -4515,7 +4515,7 @@ SELECT pg_catalog.setval('public."categories_idCategories_seq"', 10, true);
 --
 -- TOC entry 4031 (class 0 OID 0)
 -- Dependencies: 217
--- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.django_admin_log_id_seq', 1, false);
@@ -4524,7 +4524,7 @@ SELECT pg_catalog.setval('public.django_admin_log_id_seq', 1, false);
 --
 -- TOC entry 4032 (class 0 OID 0)
 -- Dependencies: 219
--- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.django_content_type_id_seq', 9, true);
@@ -4533,7 +4533,7 @@ SELECT pg_catalog.setval('public.django_content_type_id_seq', 9, true);
 --
 -- TOC entry 4033 (class 0 OID 0)
 -- Dependencies: 221
--- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public.django_migrations_id_seq', 25, true);
@@ -4542,7 +4542,7 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 25, true);
 --
 -- TOC entry 4034 (class 0 OID 0)
 -- Dependencies: 224
--- Name: favorites_FavoriteID_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: favorites_FavoriteID_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public."favorites_FavoriteID_seq"', 209, true);
@@ -4551,7 +4551,7 @@ SELECT pg_catalog.setval('public."favorites_FavoriteID_seq"', 209, true);
 --
 -- TOC entry 4035 (class 0 OID 0)
 -- Dependencies: 226
--- Name: products_idProduct_seq; Type: SEQUENCE SET; Schema: public; Owner: thpbpfbsiueftm
+-- Name: products_idProduct_seq; Type: SEQUENCE SET; Schema: public; Owner: root
 --
 
 SELECT pg_catalog.setval('public."products_idProduct_seq"', 4499, true);
@@ -4559,7 +4559,7 @@ SELECT pg_catalog.setval('public."products_idProduct_seq"', 4499, true);
 
 --
 -- TOC entry 3794 (class 2606 OID 861643)
--- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -4568,7 +4568,7 @@ ALTER TABLE ONLY public.auth_group
 
 --
 -- TOC entry 3799 (class 2606 OID 861645)
--- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -4577,7 +4577,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 3802 (class 2606 OID 861647)
--- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -4586,7 +4586,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 3796 (class 2606 OID 861649)
--- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -4595,7 +4595,7 @@ ALTER TABLE ONLY public.auth_group
 
 --
 -- TOC entry 3805 (class 2606 OID 861651)
--- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -4604,7 +4604,7 @@ ALTER TABLE ONLY public.auth_permission
 
 --
 -- TOC entry 3807 (class 2606 OID 861653)
--- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -4613,7 +4613,7 @@ ALTER TABLE ONLY public.auth_permission
 
 --
 -- TOC entry 3815 (class 2606 OID 861655)
--- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -4622,7 +4622,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 --
 -- TOC entry 3818 (class 2606 OID 861657)
--- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -4631,7 +4631,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 --
 -- TOC entry 3809 (class 2606 OID 861659)
--- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user
@@ -4640,7 +4640,7 @@ ALTER TABLE ONLY public.auth_user
 
 --
 -- TOC entry 3821 (class 2606 OID 861661)
--- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -4649,7 +4649,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 --
 -- TOC entry 3824 (class 2606 OID 861663)
--- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -4658,7 +4658,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 --
 -- TOC entry 3812 (class 2606 OID 861665)
--- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user
@@ -4667,7 +4667,7 @@ ALTER TABLE ONLY public.auth_user
 
 --
 -- TOC entry 3826 (class 2606 OID 861667)
--- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.categories
@@ -4676,7 +4676,7 @@ ALTER TABLE ONLY public.categories
 
 --
 -- TOC entry 3829 (class 2606 OID 861669)
--- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -4685,7 +4685,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 --
 -- TOC entry 3832 (class 2606 OID 861671)
--- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -4694,7 +4694,7 @@ ALTER TABLE ONLY public.django_content_type
 
 --
 -- TOC entry 3834 (class 2606 OID 861673)
--- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -4703,7 +4703,7 @@ ALTER TABLE ONLY public.django_content_type
 
 --
 -- TOC entry 3836 (class 2606 OID 861675)
--- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_migrations
@@ -4712,7 +4712,7 @@ ALTER TABLE ONLY public.django_migrations
 
 --
 -- TOC entry 3839 (class 2606 OID 861677)
--- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_session
@@ -4721,7 +4721,7 @@ ALTER TABLE ONLY public.django_session
 
 --
 -- TOC entry 3842 (class 2606 OID 861679)
--- Name: favorites favorites_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: favorites favorites_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.favorites
@@ -4730,7 +4730,7 @@ ALTER TABLE ONLY public.favorites
 
 --
 -- TOC entry 3844 (class 2606 OID 861681)
--- Name: products products_pkey; Type: CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: products products_pkey; Type: CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.products
@@ -4739,7 +4739,7 @@ ALTER TABLE ONLY public.products
 
 --
 -- TOC entry 3792 (class 1259 OID 861682)
--- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (name varchar_pattern_ops);
@@ -4747,7 +4747,7 @@ CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (nam
 
 --
 -- TOC entry 3797 (class 1259 OID 861683)
--- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permissions USING btree (group_id);
@@ -4755,7 +4755,7 @@ CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permi
 
 --
 -- TOC entry 3800 (class 1259 OID 861684)
--- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_permissions USING btree (permission_id);
@@ -4763,7 +4763,7 @@ CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_
 
 --
 -- TOC entry 3803 (class 1259 OID 861685)
--- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission USING btree (content_type_id);
@@ -4771,7 +4771,7 @@ CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission 
 
 --
 -- TOC entry 3813 (class 1259 OID 861686)
--- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_user_groups_group_id_97559544 ON public.auth_user_groups USING btree (group_id);
@@ -4779,7 +4779,7 @@ CREATE INDEX auth_user_groups_group_id_97559544 ON public.auth_user_groups USING
 
 --
 -- TOC entry 3816 (class 1259 OID 861687)
--- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_user_groups_user_id_6a12ed8b ON public.auth_user_groups USING btree (user_id);
@@ -4787,7 +4787,7 @@ CREATE INDEX auth_user_groups_user_id_6a12ed8b ON public.auth_user_groups USING 
 
 --
 -- TOC entry 3819 (class 1259 OID 861688)
--- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_user_user_permissions_permission_id_1fbb5f2c ON public.auth_user_user_permissions USING btree (permission_id);
@@ -4795,7 +4795,7 @@ CREATE INDEX auth_user_user_permissions_permission_id_1fbb5f2c ON public.auth_us
 
 --
 -- TOC entry 3822 (class 1259 OID 861689)
--- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_user_user_permissions_user_id_a95ead1b ON public.auth_user_user_permissions USING btree (user_id);
@@ -4803,7 +4803,7 @@ CREATE INDEX auth_user_user_permissions_user_id_a95ead1b ON public.auth_user_use
 
 --
 -- TOC entry 3810 (class 1259 OID 861690)
--- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (username varchar_pattern_ops);
@@ -4811,7 +4811,7 @@ CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (u
 
 --
 -- TOC entry 3827 (class 1259 OID 861691)
--- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_log USING btree (content_type_id);
@@ -4819,7 +4819,7 @@ CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_lo
 
 --
 -- TOC entry 3830 (class 1259 OID 861692)
--- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING btree (user_id);
@@ -4827,7 +4827,7 @@ CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING 
 
 --
 -- TOC entry 3837 (class 1259 OID 861693)
--- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING btree (expire_date);
@@ -4835,7 +4835,7 @@ CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING 
 
 --
 -- TOC entry 3840 (class 1259 OID 861694)
--- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: root
 --
 
 CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session USING btree (session_key varchar_pattern_ops);
@@ -4843,7 +4843,7 @@ CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session U
 
 --
 -- TOC entry 3845 (class 2606 OID 861695)
--- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -4852,7 +4852,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 3846 (class 2606 OID 861700)
--- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -4861,7 +4861,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 --
 -- TOC entry 3847 (class 2606 OID 861705)
--- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -4870,7 +4870,7 @@ ALTER TABLE ONLY public.auth_permission
 
 --
 -- TOC entry 3848 (class 2606 OID 861710)
--- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -4879,7 +4879,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 --
 -- TOC entry 3849 (class 2606 OID 861715)
--- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -4888,7 +4888,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 --
 -- TOC entry 3850 (class 2606 OID 861720)
--- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -4897,7 +4897,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 --
 -- TOC entry 3851 (class 2606 OID 861725)
--- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -4906,7 +4906,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 --
 -- TOC entry 3852 (class 2606 OID 861730)
--- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -4915,7 +4915,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 --
 -- TOC entry 3853 (class 2606 OID 861735)
--- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: thpbpfbsiueftm
+-- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -4925,12 +4925,12 @@ ALTER TABLE ONLY public.django_admin_log
 --
 -- TOC entry 4010 (class 0 OID 0)
 -- Dependencies: 3
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: thpbpfbsiueftm
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: root
 --
 
 REVOKE ALL ON SCHEMA public FROM postgres;
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-GRANT ALL ON SCHEMA public TO thpbpfbsiueftm;
+GRANT ALL ON SCHEMA public TO root;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
@@ -4940,7 +4940,7 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 -- Name: LANGUAGE plpgsql; Type: ACL; Schema: -; Owner: postgres
 --
 
-GRANT ALL ON LANGUAGE plpgsql TO thpbpfbsiueftm;
+GRANT ALL ON LANGUAGE plpgsql TO root;
 
 
 -- Completed on 2020-07-26 13:54:14
