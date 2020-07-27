@@ -16,8 +16,6 @@ class MySeleniumTests(StaticLiveServerTestCase):
     This class provides a configuration and a set of actions to
     simulate the behaviour of a human user.
     """
-    logging.info(Products.objects.all().count())
-    print(Favorites.objects.all())
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
@@ -31,6 +29,10 @@ class MySeleniumTests(StaticLiveServerTestCase):
         This contains the list of actions to perform in the browser,
          the order in which Selenium executes them and the assertions to test.
         """
+
+        logging.info(Favorites.objects.all())
+        print(Favorites.objects.all())
+
         print(self.live_server_url)
 
         logging.info("Starting selenium")
