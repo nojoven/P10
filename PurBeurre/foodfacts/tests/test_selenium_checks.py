@@ -8,11 +8,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import WebDriverException
 import logging
 
+from foodfacts.models import Products, Favorites
+
+
 class MySeleniumTests(StaticLiveServerTestCase):
     """
     This class provides a configuration and a set of actions to
     simulate the behaviour of a human user.
     """
+    logging.info(Products.objects.all().count())
+    print(Favorites.objects.all())
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
