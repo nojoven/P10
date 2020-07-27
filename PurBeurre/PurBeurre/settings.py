@@ -14,8 +14,6 @@ import os
 import django_heroku
 import dj_database_url
 import raven
-import logging
-from foodfacts.models import Products, Favorites
 import sentry_sdk
 from django.test import LiveServerTestCase
 from sentry_sdk.integrations.django import DjangoIntegration
