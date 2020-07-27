@@ -97,7 +97,7 @@ DATABASES = {
         "NAME": "purbeurre",
         "USER": "root",
         "PASSWORD": "Hamzamal89",
-        "HOST": f"{LiveServerTestCase.allowed_host}",
+        "HOST": "",
         "PORT": "5433",
     }
 }
