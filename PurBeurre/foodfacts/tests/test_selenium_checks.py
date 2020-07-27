@@ -29,8 +29,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         This contains the list of actions to perform in the browser,
          the order in which Selenium executes them and the assertions to test.
         """
-        
-        logging.info(Favorites.objects.all())
+
         print(Favorites.objects.all())
 
         print(self.live_server_url)
