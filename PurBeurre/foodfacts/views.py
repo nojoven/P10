@@ -9,6 +9,7 @@ from .models import Products, Favorites
 def home(request):
     """Gets the home page"""
     user = request.user
+    print(len(Products.objects.all()))
     return render(request, "accueil.html", {"user": user})
 
 
