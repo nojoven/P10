@@ -18,7 +18,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     """
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    # options.add_argument('--headless')
     options.add_argument("--disable-extensions")
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
@@ -29,7 +29,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         This contains the list of actions to perform in the browser,
          the order in which Selenium executes them and the assertions to test.
         """
-
+        self.databases.append("")
         logging.info(Favorites.objects.all())
         print(Favorites.objects.all())
 
