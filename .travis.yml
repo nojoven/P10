@@ -38,6 +38,7 @@ before_script:
   - psql purbeurre -c "INSERT INTO public.auth_user(password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) VALUES ('Niam1989', '2020-06-27 17:07:45.81932+00', false, 'BigFriend90s', 'Robert', 'Engels', 'monami@gmail.com', false, true, '2020-05-27 17:07:45.81932+00');"
 
 script:
+  - sudo -u root psql
   - python manage.py test
 
 # safelist
