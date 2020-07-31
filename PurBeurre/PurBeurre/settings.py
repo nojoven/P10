@@ -92,10 +92,11 @@ WSGI_APPLICATION = "PurBeurre.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "OPTIONS": {},
         "NAME": "purbeurre",
-        "USER": "postgres",
-        "PASSWORD": "",
+        "USER": "root",
+        "PASSWORD": "Hamzamal89",
         "HOST": "localhost",
         "PORT": "5433",
     }
