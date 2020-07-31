@@ -35,6 +35,8 @@ before_script:
   - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
   - psql purbeurre < herokubase.sql
   - psql purbeurre -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
+  - psql purbeurre -c "INSERT INTO public.auth_user(password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) VALUES ('Niam1989', '2020-06-27 17:07:45.81932+00', false, 'BigFriend90s', 'Robert', 'Engels', 'monami@gmail.com', false, true, '2020-05-27 17:07:45.81932+00');"
+
 
 script:
   - python manage.py test
