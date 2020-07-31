@@ -30,8 +30,7 @@ env:
 
 before_script:
   - pip3 install -r requirements.txt
-  - psql -c "CREATE DATABASE purbeurre ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
-  - psql "CREATE ROLE root SUPERUSER LOGIN";
+  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
   - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'";
   - psql purbeurre < herokubase.sql
   - psql purbeurre -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
