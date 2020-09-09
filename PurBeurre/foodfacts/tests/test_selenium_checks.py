@@ -19,7 +19,6 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
     URI_r_BASE = "http://localhost:8000/roles/"
     register_request = f"{URI_r_BASE}register/"
-    logout_request = f"{URI_r_BASE}logout/"
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--disable-extensions")
