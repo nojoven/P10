@@ -77,7 +77,14 @@ class MySeleniumTests(StaticLiveServerTestCase):
                  "first_name": first_name,
                  "last_name": last_name
              })
-        self.driver.post("/roles/logout")
+        self.driver.get(f"{self.live_server_url}/roles/signin/")
+        # submit
+        self.assertIn(
+            "CONNEXION", self.driver.find_element_by_tag_name("h1").text
+        )
+        logging.info("On deconnection page")
+        print("On deconnection page")
+        self.driver.execute_script("document.getElementById('logout_btn').click()")
 
         # Then we go on the sigin page
         self.driver.get(f"{self.live_server_url}/roles/signin/")
