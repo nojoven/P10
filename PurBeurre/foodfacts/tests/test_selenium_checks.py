@@ -17,12 +17,16 @@ class MySeleniumTests(StaticLiveServerTestCase):
     simulate the behaviour of a human user.
     """
 
+    URI_r_BASE = "http://localhost:8000/roles/"
+    register_request = f"{URI_r_BASE}register/"
+
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--disable-extensions")
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
     driver.implicitly_wait(4)
+
 
     def test_browser(self):
         """
@@ -53,6 +57,29 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
         logging.info("Home title contains 'GRAS'")
         print("Home title contains 'GRAS'")
+
+
+        username="BigFriend90s",
+        email="monami@gmail.com",
+        password1="Niam1989",
+        password2="Niam1989",
+        first_name="Robert",
+        last_name="Engels",
+        """Reach the sign up page"""
+        response = self.client.get(self.register_request)
+        assert response.status_code == 200
+        response = self.client.post(
+            "/roles/create",
+             {
+                 "username": username,
+                 "email": email,
+                 "password1": password1,
+                 "password2": password2,
+                 "first_name": first_name,
+                 "last_name": last_name
+             })
+        self.driver.get(f"{self.live_server_url}/")
+
         # Then we go on the sigin page
         self.driver.get(f"{self.live_server_url}/roles/signin/")
         logging.info("Asking signin page")
