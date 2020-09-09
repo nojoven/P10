@@ -77,7 +77,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
                  "first_name": first_name,
                  "last_name": last_name
              })
-        self.driver.get("/roles/logout")
+        self.driver.post("/roles/logout")
 
         # Then we go on the sigin page
         self.driver.get(f"{self.live_server_url}/roles/signin/")
