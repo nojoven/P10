@@ -4,8 +4,10 @@ from django.test import TestCase, RequestFactory
 from PurBeurre.constants import PRODUCT_EXAMPLE
 from foodfacts.models import Products
 from foodfacts import views as fviews
+import pytest
 
 
+@pytest.mark.django_db
 class SimpleTest(TestCase):
     """
     Here we define attributes and functions to test
