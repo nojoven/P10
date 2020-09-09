@@ -19,7 +19,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
     URI_r_BASE = "http://localhost:8000/roles/"
     register_request = f"{URI_r_BASE}register/"
-
+    logout_request = f"{URI_r_BASE}logout/"
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument("--disable-extensions")
@@ -78,7 +78,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
                  "first_name": first_name,
                  "last_name": last_name
              })
-        self.driver.get(f"{self.live_server_url}/")
+        self.driver.get(logout_request)
 
         # Then we go on the sigin page
         self.driver.get(f"{self.live_server_url}/roles/signin/")
