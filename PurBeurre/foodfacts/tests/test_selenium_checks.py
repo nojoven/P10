@@ -50,8 +50,6 @@ class MySeleniumTests(StaticLiveServerTestCase):
         # Then we go on the website
         self.driver.start_client()
 
-        self.driver.execute_script("python manage.py fill_db")
-
         self.driver.get(f"{self.live_server_url}/foodfacts/")
         logging.info("Got localhost")
         print("Got localhost")
