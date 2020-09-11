@@ -6,9 +6,6 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d ~/
   - export CHROME_BIN=chromium-browser
-  - sudo sed -i -e '/local.*peer/s/postgres/all/' -e 's/peer\|md5/trust/g' /etc/postgresql/*/main/pg_hba.conf
-  - sudo service postgresql restart
-  - sleep 1
 
 language: python
 
@@ -31,6 +28,7 @@ env:
     - DJANGO_SETTINGS_MODULE=PurBeurre.settings
 
 before_script:
+  - psql -U postgres
   - pip3 install -r requirements.txt
 
 script:
