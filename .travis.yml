@@ -6,6 +6,7 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d ~/
   - export CHROME_BIN=chromium-browser
+  - export DJANGO_SETTINGS_MODULE=PurBeurre.settings
 
 language: python
 
@@ -30,13 +31,7 @@ env:
 
 before_script:
   - pip3 install -r requirements.txt
-  - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
-  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
-  - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'";
-  - psql purbeurre < herokubase.sql
-  - psql purbeurre -c "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;"
-  - psql purbeurre -c "INSERT INTO public.auth_user(password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) VALUES ('Niam1989', '2020-06-27 17:07:45.81932+00', false, 'BigFriend90s', 'Robert', 'Engels', 'monami@gmail.com', false, true, '2020-05-27 17:07:45.81932+00');"
-
+  - psql -c "create database purbeurre;" -U postgres
 
 script:
   - python manage.py fill_db
