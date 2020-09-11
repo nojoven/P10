@@ -23,9 +23,15 @@ addons:
 services:
   - postgresql
 
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE="PurBeurre.settings"
+    - PGPORT=5433
+    - PGUSER=postgres
+
 before_script:
   - pip3 install -r requirements.txt
-  - psql -c "create database purbeurre;" -U postgres
+  - psql -c 'create database purbeurre' -U postgres
 
 script:
   - python manage.py fill_db
