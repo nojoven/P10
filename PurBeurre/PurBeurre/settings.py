@@ -96,7 +96,6 @@ DATABASES = {
         "OPTIONS": {},
         "NAME": "purbeurre",
         "USER": "postgres",
-        "PASSWORD": "",
         "HOST": f"{LiveServerTestCase.allowed_host}",
         "PORT": "5433",
     }
