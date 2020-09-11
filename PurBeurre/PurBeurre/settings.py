@@ -95,8 +95,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "OPTIONS": {},
         "NAME": "purbeurre",
-        "USER": "root",
-        "PASSWORD": "Hamzamal89",
+        "USER": os.getenv("PGUSER"),
+        "PASSWORD": os.getenv("PGPASSWORD"),
         "HOST": f"{LiveServerTestCase.allowed_host}",
         "PORT": "5433",
     }
