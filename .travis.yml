@@ -6,7 +6,6 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d ~/
   - export CHROME_BIN=chromium-browser
-  - export DJANGO_SETTINGS_MODULE=PurBeurre.settings
 
 language: python
 
@@ -23,11 +22,6 @@ addons:
 
 services:
   - postgresql
-
-env:
-  global:
-    - DJANGO_SETTINGS_MODULE="PurBeurre.settings"
-    - PGPORT=5433
 
 before_script:
   - pip3 install -r requirements.txt
