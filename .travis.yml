@@ -25,7 +25,7 @@ services:
 
 env:
   global:
-    - DJANGO_SETTINGS_MODULE=settings.travis
+    - DJANGO_SETTINGS_MODULE=PurBeurre.settings.travis
 
 before_script:
   - pip3 install -r requirements.txt
