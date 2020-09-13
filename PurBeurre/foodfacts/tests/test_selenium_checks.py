@@ -11,9 +11,7 @@ import pytest
 
 from foodfacts.models import Products, Favorites
 
-pytestmark = pytest.mark.django_db
 
-@pytest.mark.django_db
 class MySeleniumTests(StaticLiveServerTestCase):
     """
     This class provides a configuration and a set of actions to

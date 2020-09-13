@@ -9,7 +9,6 @@ from PurBeurre.constants import PRODUCT_EXAMPLE
 from foodfacts.models import Products
 
 
-@pytest.mark.django_db
 class TestRoles(TestCase):
     """Pytest will be used to verify the behaviour of
      the following functions"""
