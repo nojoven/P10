@@ -7,7 +7,9 @@ from django.test import TestCase
 from model_bakery import baker
 from foodfacts.models import Categories, Favorites, Products
 
+pytestmark = pytest.mark.django_db
 
+@pytest.mark.django_db
 class TestModels(TestCase):
     """This class is used to test the models of my three models"""
 

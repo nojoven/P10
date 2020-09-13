@@ -11,14 +11,16 @@ import pytest
 
 from foodfacts.models import Products, Favorites
 
+pytestmark = pytest.mark.django_db
 
+@pytest.mark.django_db
 class MySeleniumTests(StaticLiveServerTestCase):
     """
     This class provides a configuration and a set of actions to
     simulate the behaviour of a human user.
     """
 
-    URI_r_BASE = f"{LiveServerTestCase.allowed_host}/"
+    URI_r_BASE = f"{self.live_server_url}/"
     register_request = f"{URI_r_BASE}register/"
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
