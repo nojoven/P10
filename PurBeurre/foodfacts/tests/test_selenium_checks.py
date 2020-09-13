@@ -20,7 +20,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     simulate the behaviour of a human user.
     """
 
-    URI_r_BASE = "http://localhost:8000/roles/"
+    URI_r_BASE = f"{self.live_server_url}/"
     register_request = f"{URI_r_BASE}register/"
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
