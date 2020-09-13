@@ -105,16 +105,16 @@ class MySeleniumTests(StaticLiveServerTestCase):
         print("On account page")
         # We look for a product
         search_navbar_input = self.driver.find_element_by_id("nav_input")
-        logging.info("We want cheese")
-        print("We want cheese")
-        self.driver.execute_script("document.getElementById('nav_input').value = 'cheese'")
+        logging.info("We want Gazpacho")
+        print("We want Gazpacho")
+        self.driver.execute_script("document.getElementById('nav_input').value = 'Gazpacho'")
         search_navbar_input.submit()
 
         self.assertIn(
-            "cheese", self.driver.find_element_by_id("product_found").text
+            "Gazpacho", self.driver.find_element_by_id("product_found").text
         )
-        logging.info("cheese found")
-        print("cheese found")
+        logging.info("Gazpacho found")
+        print("cheese Gazpacho")
         # We go to the product's page
         self.driver.find_element_by_id(f"details{1}").click()
 
@@ -125,12 +125,12 @@ class MySeleniumTests(StaticLiveServerTestCase):
         print("On coleslaw details page")
         # We go to its Open Food Facts page
         self.driver.execute_script("document.getElementById('offacts_link').click()")
-        logging.info("Offact linked worked for cheese")
-        print("Offact linked worked for cheese")
+        logging.info("Offact linked worked for Gazpacho")
+        print("Offact linked worked for Gazpacho")
         # We go back to the results
         self.driver.execute_script("window.history.go(-2)")
-        logging.info("Back to results page (cheese)")
-        print("Back to results page (cheese)")
+        logging.info("Back to results page (Gazpacho)")
+        print("Back to results page (Gazpacho)")
         # We add the products to our favourites
         self.driver.find_elements_by_class_name("add_to_fav")[0].click()
         logging.info("One product is now a favourite")
