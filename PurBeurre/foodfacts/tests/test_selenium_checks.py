@@ -20,14 +20,21 @@ class MySeleniumTests(StaticLiveServerTestCase):
     simulate the behaviour of a human user.
     """
 
-    URI_r_BASE = f"{self.live_server_url}/"
+    URI_r_BASE = f"{live_server_url}/"
     register_request = f"{URI_r_BASE}register/"
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument("--disable-extensions")
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-    driver.implicitly_wait(4)
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.selenium = webdriver()
+        cls.selenium.options = webdriver.ChromeOptions().add_argument('--headless').add_argument("--disable-extensions")
+        cls.selenium.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        cls.selenium.implicitly_wait(4)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super().tearDownClass()
 
 
     def test_browser(self):
