@@ -24,7 +24,7 @@ class TestModels(TestCase):
         assert name_fav is not None
         self.assertEqual(str(name_fav), "Gazpacho")
 
-    
+
     def test_products_model(self):
         """This creates a product and checks if it is created"""
         name_product = baker.make(Products, productname="Gazpacho")
