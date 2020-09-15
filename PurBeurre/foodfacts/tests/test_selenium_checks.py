@@ -29,7 +29,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         cls.selenium.options = webdriver.ChromeOptions().add_argument('--headless').add_argument("--disable-extensions")
         cls.selenium.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         cls.selenium.implicitly_wait(4)
-        
+
 
     @classmethod
     def tearDownClass(cls):
