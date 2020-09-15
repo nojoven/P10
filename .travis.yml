@@ -30,9 +30,6 @@ env:
 
 before_script:
   - pip3 install -r requirements.txt
-  - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
-  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
-
 
 script:
   - python manage.py test
