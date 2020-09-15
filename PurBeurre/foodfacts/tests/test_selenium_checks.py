@@ -124,7 +124,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         print("We want Gazpacho")
         self.driver.execute_script("document.getElementById('nav_input').value = 'Gazpacho'")
         search_navbar_input.submit()
-
+        print(driver.page_source.encode("utf-8"))
         self.assertIn(
             "Gazpacho", self.driver.find_element_by_id("product_found").text
         )
@@ -136,7 +136,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         self.assertIn(
             "Nutriscore", self.driver.find_element_by_id("nutriscore_h3").text
         )
-        logging.info("On coleslaw details page")
+        logging.info(" LOGGING On coleslaw details page")
         print("On coleslaw details page")
         # We go to its Open Food Facts page
         self.driver.execute_script("document.getElementById('offacts_link').click()")
