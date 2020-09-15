@@ -22,8 +22,6 @@ class MySeleniumTests(StaticLiveServerTestCase):
     simulate the behaviour of a human user.
     """
 
-
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -137,9 +135,9 @@ class MySeleniumTests(StaticLiveServerTestCase):
             "Gazpacho", self.driver.find_element_by_id("product_found").text
         )
         logging.info("Gazpacho found")
-        print(" Gazpacho")
+        print(" Gazpacho found")
         # We go to the product's page
-        self.driver.find_element_by_id(f"details{1}").click()
+        self.driver.find_element_by_id("details1").click()
 
         self.assertIn(
             "Nutriscore", self.driver.find_element_by_id("nutriscore_h3").text
