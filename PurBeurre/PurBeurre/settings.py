@@ -17,7 +17,7 @@ import raven
 import sentry_sdk
 from django.test import LiveServerTestCase
 from sentry_sdk.integrations.django import DjangoIntegration
-
+import djangokeys
 import psycopg2.extensions
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "3u2!k9u@no&)*3iem^bkft^5bfa)od*l&$m(kl0lnmaedzz=(q"
+SECRET_KEY = djangokeys.retrieve_secret_key_from_file("secret.key", strict=True)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('ENV') == 'PRODUCTION':
