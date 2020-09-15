@@ -20,8 +20,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     simulate the behaviour of a human user.
     """
 
-    URI_r_BASE = f"{live_server_url}/"
-    register_request = f"{URI_r_BASE}register/"
+
 
     @classmethod
     def setUpClass(cls):
@@ -30,10 +29,12 @@ class MySeleniumTests(StaticLiveServerTestCase):
         cls.selenium.options = webdriver.ChromeOptions().add_argument('--headless').add_argument("--disable-extensions")
         cls.selenium.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         cls.selenium.implicitly_wait(4)
+        
 
     @classmethod
     def tearDownClass(cls):
         cls.selenium.quit()
+        print("CLOSED")
         super().tearDownClass()
 
 
@@ -42,6 +43,9 @@ class MySeleniumTests(StaticLiveServerTestCase):
         This contains the list of actions to perform in the browser,
          the order in which Selenium executes them and the assertions to test.
         """
+
+        URI_r_BASE = f"{self.live_server_url}/"
+        register_request = f"{URI_r_BASE}register/"
 
         print(Favorites.objects.all())
 
