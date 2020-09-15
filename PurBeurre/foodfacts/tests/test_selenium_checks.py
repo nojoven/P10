@@ -46,6 +46,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         This contains the list of actions to perform in the browser,
          the order in which Selenium executes them and the assertions to test.
         """
+        print(Products.objects.all())
 
         URI_r_BASE = f"{self.live_server_url}/roles/"
         register_request = f"{URI_r_BASE}register/"
@@ -129,7 +130,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
             "Gazpacho", self.driver.find_element_by_id("product_found").text
         )
         logging.info("Gazpacho found")
-        print("cheese Gazpacho")
+        print(" Gazpacho")
         # We go to the product's page
         self.driver.find_element_by_id(f"details{1}").click()
 
