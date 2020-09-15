@@ -36,7 +36,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
     @classmethod
     def tearDownClass(cls):
-        cls.selenium.quit()
+        cls.driver.quit()
         print("CLOSED")
         super().tearDownClass()
 
