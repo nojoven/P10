@@ -82,7 +82,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         first_name="Robert",
         last_name="Engels",
         """Reach the sign up page"""
-        response = self.client.get(self.register_request)
+        response = self.client.get(register_request)
         assert response.status_code == 200
         self.client.post(
             "/roles/create",
