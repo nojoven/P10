@@ -25,7 +25,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.selenium = webdriver()
+        cls.selenium = webdriver.webdriver()
         cls.selenium.options = webdriver.ChromeOptions().add_argument('--headless').add_argument("--disable-extensions")
         cls.selenium.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         cls.selenium.implicitly_wait(4)
