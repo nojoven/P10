@@ -4,6 +4,7 @@ It will use Selenium.
 """
 
 from selenium import webdriver
+from PurBeurre.constants import PRODUCT_EXAMPLE
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import WebDriverException
@@ -46,6 +47,12 @@ class MySeleniumTests(StaticLiveServerTestCase):
         This contains the list of actions to perform in the browser,
          the order in which Selenium executes them and the assertions to test.
         """
+        print(Products.objects.all())
+
+        product = PRODUCT_EXAMPLE
+        query = Products(**product)
+        query.save()
+
         print(Products.objects.all())
 
         URI_r_BASE = f"{self.live_server_url}/roles/"
