@@ -47,7 +47,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
          the order in which Selenium executes them and the assertions to test.
         """
 
-        URI_r_BASE = f"{self.live_server_url}/"
+        URI_r_BASE = f"{self.live_server_url}/roles/"
         register_request = f"{URI_r_BASE}register/"
         print(register_request)
 
