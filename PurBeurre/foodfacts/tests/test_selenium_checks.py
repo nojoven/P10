@@ -49,6 +49,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
 
         URI_r_BASE = f"{self.live_server_url}/"
         register_request = f"{URI_r_BASE}register/"
+        print(register_request)
 
         print(Favorites.objects.all())
 
