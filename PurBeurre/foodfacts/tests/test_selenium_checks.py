@@ -2,6 +2,7 @@
 This file is used to test the functionalities in the browser.
 It will use Selenium.
 """
+
 from selenium import webdriver
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from webdriver_manager.chrome import ChromeDriverManager
@@ -25,9 +26,10 @@ class MySeleniumTests(StaticLiveServerTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.selenium = webdriver.webdriver()
-        cls.selenium.options = webdriver.ChromeOptions().add_argument('--headless').add_argument("--disable-extensions")
-        cls.selenium.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+
+        cls.selenium = webdriver.Chrome(ChromeDriverManager().install())
+        # cls.selenium.options = webdriver.ChromeOptions().add_argument('--headless').add_argument("--disable-extensions")
+
         cls.selenium.implicitly_wait(4)
 
 
