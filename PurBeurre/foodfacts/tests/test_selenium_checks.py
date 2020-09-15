@@ -8,6 +8,8 @@ from PurBeurre.constants import PRODUCT_EXAMPLE
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import WebDriverException
+from foodfacts.collector import Collector
+from foodfacts.modules.database_service import DatabaseService
 import logging
 import pytest
 
@@ -46,10 +48,29 @@ class MySeleniumTests(StaticLiveServerTestCase):
          the order in which Selenium executes them and the assertions to test.
         """
         print(Products.objects.all())
-
+        """
         product = PRODUCT_EXAMPLE
         query = Products(**product)
         query.save()
+        """
+
+        # Creation of the tables using makemigration and migrate
+        # Instantiation of a Collector
+        collector = Collector()
+
+        # I defined there a tuple of categories
+        list_of_categories = ("soup", "pizza", "salad", "cake", "cheese")
+
+        # I populate the table of the categories
+        for category in list_of_categories:
+            category_entry = {"name": category}
+            DatabaseService.fill_categories_table(category_entry)
+
+        # I retrieve only the products that correspond to my categories
+        # in my tuple and I populate the products table
+        for category in list_of_categories:
+            food_returned = collector.get_products_by_category(category)
+            DatabaseService.fill_products_table(food_returned)
 
         print(Products.objects.all())
 
@@ -137,7 +158,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         logging.info("Gazpacho found")
         print(" Gazpacho found")
         # We go to the product's page
-        self.driver.find_element_by_id("details1").click()
+        self.driver.find_element_by_id(f"details{1}").click()
 
         self.assertIn(
             "Nutriscore", self.driver.find_element_by_id("nutriscore_h3").text
