@@ -44,4 +44,4 @@ script:
 # safelist
 branches:
   only:
-    - newP10
+    - testbranch
