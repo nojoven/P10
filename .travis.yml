@@ -32,6 +32,10 @@ before_script:
   - pip3 install django-keys
   - pip3 install -r requirements.txt
   - python3 -m djangokeys --length 60 > secret.key
+  - psql -c "CREATE ROLE root SUPERUSER LOGIN CREATEDB";
+  - psql -c "CREATE DATABASE purbeurre WITH OWNER = root ENCODING = 'UTF8' CONNECTION LIMIT = -1;"
+  - psql -c "ALTER USER root WITH PASSWORD 'Hamzamal89'";
+  - psql purbeurre < herokubase.sql
 
 
 script:
