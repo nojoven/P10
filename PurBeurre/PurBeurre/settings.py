@@ -148,7 +148,7 @@ STATIC_URL = "/static/"
 
 
 RAVEN_CONFIG = {
-    'dsn': 'http://209.97.178.91/', # caution replace by your own!!
+    'dsn': 'https://12cc08a9fb6142ddbb1568508b89c014@o423877.ingest.sentry.io/5354844', # caution replace by your own!!
     # If you are using git, you can also automatically configure the
     # release based on the git info.
     'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
