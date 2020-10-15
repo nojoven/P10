@@ -20,6 +20,7 @@ LOGGER = logging.getLogger(__name__)
 
 def create_user(request):
     """Creates a user based on form inputs"""
+    logger.info("Creating user.")
     if request.method == "POST":
         form = CreateForm(request.POST)
         if form.is_valid():
@@ -42,6 +43,7 @@ def create_user(request):
 
 def signin_user(request):
     """Logs a user in based on form inputs"""
+    logger.info("Signing user in.")
     if request.method == "POST":
         form = SigninForm(request.POST)
         if form.is_valid():
@@ -70,6 +72,7 @@ def signin_user(request):
 
 def update_profile(request):
     """Updates user data based on user inputs."""
+    logger.info("Updating user.")
     # instance is used to indicate the current user
     if request.method == "POST":
         form = UpdateProfileForm(
@@ -93,12 +96,14 @@ def update_profile(request):
 
 def logout_user(request):
     """Logs out a user based on form inputs"""
+    logger.info("Logging user out.")
     logout(request)
     return redirect("signin")
 
 
 def like(request, product_id, replaced_id):
     """Adds a favourite to the database for a user"""
+    logger.info("Adding favourite.")
     if request.method == "POST":
         user = request.user
         if product_id:
@@ -129,6 +134,7 @@ def like(request, product_id, replaced_id):
 
 def favourites(request):
     """Allows to display the favourites of a user in the template"""
+    logger.info("Displaying user's favourite.")
     userid = request.user.id
     user_favs = select_user_favs(userid)
     return render(
@@ -137,7 +143,8 @@ def favourites(request):
 
 
 def unlike(request, unliked_id):
-    """Adds a favourite to the database for a user"""
+    """Removes a favourite from the database for a user"""
+    logger.info("Removing user's favourite.")
     if request.method == "POST":
         remove_user_fav(
             request.user.id, unliked_id
@@ -148,6 +155,7 @@ def unlike(request, unliked_id):
 
 def account(request):
     """Returns the account page"""
+    logger.info("Going to user's account page.")
     return render(request, "mon_compte.html")
 
 
@@ -156,6 +164,7 @@ def select_liked_in_products(liked_id):
     This returns the entire row of the product that we
     want to add to favourites
     """
+    logger.info("Getting the fav in the product table.")
     product = Products.objects.get(
         idproduct=liked_id
     )
@@ -166,6 +175,7 @@ def select_user_favs(userid):
     """
     Returns the favourites rows of a specific user
     """
+    logger.info("Getting user's favs.")
     user_favs = Favorites.objects.filter(
         userid=userid)
     return user_favs
@@ -173,6 +183,7 @@ def select_user_favs(userid):
 
 def remove_user_fav(userid_unlike, unliked_id):
     """Removes a article from the user's favourites list"""
+    logger.info("Remove relation between a user and a fav")
     unliked_product = Favorites.objects.get(
         userid=userid_unlike, productid=unliked_id
     )
