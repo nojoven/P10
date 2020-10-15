@@ -4,12 +4,15 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import NavSearchForm
 from .models import Products, Favorites
+import logging
 
+logger = logging.getLogger(__name__)
 
 def home(request):
     """Gets the home page"""
     user = request.user
     print(len(Products.objects.all()))
+    logger.info("Going to home page.")
     return render(request, "accueil.html", {"user": user})
 
 
