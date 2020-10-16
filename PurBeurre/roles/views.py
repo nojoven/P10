@@ -15,7 +15,7 @@ from .forms import (
     UpdateProfileForm
 )
 
-LOGGER = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 def create_user(request):
