@@ -4,27 +4,33 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import NavSearchForm
 from .models import Products, Favorites
+import logging
 
+logger = logging.getLogger(__name__)
 
 def home(request):
     """Gets the home page"""
     user = request.user
     print(len(Products.objects.all()))
+    logger.info("Going to home page.")
     return render(request, "accueil.html", {"user": user})
 
 
 def aliment(product_chosen):
     """Gets the details page"""
+    logger.info("Going to product page.")
     return HttpResponseRedirect(product_chosen)
 
 
 def resultats(request):
     """Gets the results page"""
+    logger.info("Going to results page.")
     return render(request, "resultats.html")
 
 
 def notice(request):
     """Gets the notices page"""
+    logger.info("Going to law page.")
     return render(request, "mentions_legales.html")
 
 
@@ -34,7 +40,7 @@ def search_term(request):
     """
     form = NavSearchForm(request.GET)
     context = {}
-
+    logger.info("Searching...")
     if form.is_valid():
         search_word = form.cleaned_data["nav_search"]
         user_id = request.user.id
@@ -64,6 +70,7 @@ def search_term(request):
 
 def product_wanted(request, product_chosen):
     """Renders a context for the details page."""
+    logger.info("Making the product context.")
     context = dict()
     try:
         product = show_details(product_chosen)
@@ -78,6 +85,7 @@ def select_product(search_term):
     Executes the SELECT request for a
     specific article based on its name.
     """
+    logger.info("Selecting product.")
     term_data = Products.objects.filter(
         productname__icontains=search_term
     ).order_by(
@@ -94,6 +102,7 @@ def select_better_products(
     Substitution food is extracted here.
     Allows to the display of the better products.
     """
+    logger.info("Selecting better products.")
     better_products = Products.objects.filter(
         category=category_selected,
         nutrition_Score_100g__lt=nutriscore
@@ -107,6 +116,7 @@ def sort_favourites(user_id,
     """
     Returns the user's favourites in the exeplored category
     """
+    logger.info("Sorting favs.")
     relevant_favourites = Favorites.objects.filter(
         userid=user_id,
         category=term_category
@@ -116,6 +126,7 @@ def sort_favourites(user_id,
 
 def show_details(product_chosen):
     """Returns the row of an article based on its id"""
+    logger.info("Getting product by ID.")
     details = Products.objects.get(
         idproduct=product_chosen)
     return details

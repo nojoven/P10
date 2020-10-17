@@ -44,4 +44,4 @@ script:
 # safelist
 branches:
   only:
-    - testbranch
+    - cell_perfect_form
