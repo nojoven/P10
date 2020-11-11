@@ -15,10 +15,10 @@ import django_heroku
 import dj_database_url
 import raven
 import sentry_sdk
+from django.test import LiveServerTestCase
 from sentry_sdk.integrations.django import DjangoIntegration
-
-
-# import psycopg2.extensions
+import djangokeys
+import psycopg2.extensions
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "3u2!k9u@no&)*3iem^bkft^5bfa)od*l&$m(kl0lnmaedzz=(q"
+SECRET_KEY = djangokeys.retrieve_key_from_file("secret.key", strict=True)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('ENV') == 'PRODUCTION':
@@ -34,7 +34,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['beurrepur.herokuapp.com']
+ALLOWED_HOSTS = ["209.97.178.91"]
 
 # Application definition
 
@@ -92,13 +92,13 @@ WSGI_APPLICATION = "PurBeurre.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "OPTIONS": {},
         "NAME": "purbeurre",
-        "USER": "postgres",
+        "USER": "root",
         "PASSWORD": "Hamzamal89",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "HOST": f"{LiveServerTestCase.allowed_host}",
+        "PORT": "5433",
     }
 }
 
@@ -149,6 +149,60 @@ STATIC_URL = "/static/"
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
+
+RAVEN_CONFIG = {
+    'dsn': 'https://12cc08a9fb6142ddbb1568508b89c014@o423877.ingest.sentry.io/5354844', # caution replace by your own!!
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': raven.fetch_git_sha(os.path.dirname(BASE_DIR)),
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'root': {
+        'level': 'INFO', # WARNING by default. Change this to capture more than warnings.
+        'handlers': ['sentry'],
+    },
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s '
+                      '%(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'sentry': {
+            'level': 'INFO', # To capture more than ERROR, change to WARNING, INFO, etc.
+            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
+            'tags': {'custom-tag': 'x'},
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'ERROR',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'raven': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+        'sentry.errors': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': False,
+        },
+    },
+}
+
+
+
 sentry_sdk.init(
     dsn="https://12cc08a9fb6142ddbb1568508b89c014@o423877.ingest.sentry.io/5354844",
     integrations=[DjangoIntegration()],
@@ -157,4 +211,3 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
-
