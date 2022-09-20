@@ -50,7 +50,7 @@ six==1.15.0
 sqlparse==0.3.1
 supervisor==4.2.0
 toml==0.10.1
-urllib3==1.25.10
+urllib3==1.26.5
 wcwidth==0.2.5
 webdriver-manager==3.2.2
 whitenoise==5.2.0
